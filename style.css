@@ -1,0 +1,364 @@
+/* You can add custom CSS and extend Boostrap styles in this file.  Remember, Bootstrap is just CSS at the end of the day! */
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=M+PLUS+Rounded+1c:wght@400;700&family=Roboto+Condensed&display=swap');
+
+
+body {
+  background-color: #111111;
+  color: white;
+}
+
+
+
+/* Navbar Styling */
+
+@keyframes colored {
+  0% {
+    color: white;
+  }
+  100% {
+    /*text-shadow: 1px 1px 1px lightgreen;*/
+    color: limegreen;
+  }
+}
+
+@keyframes unvisited {
+  0% {
+    /*text-shadow: 1px 1px 1px lightgreen;*/
+    color: limegreen;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.nav-link {
+  animation-name: unvisited;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.nav-link:hover {
+  animation-name: colored;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+.navbar-custom {
+  background-color: #111111;
+}
+
+.navbar-custom .navbar-text {color: white;
+}
+
+
+.navbar-custom li a {
+  color: white;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.navbar-custom li a:hover {
+  font-weight: 700;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: white;
+}
+
+.custom-toggler .navbar-toggler-icon {
+background-image: url("data:image/svg+xml,%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='rgba(255,255,255,1)' viewBox='-20 -15 140 140'%3E%3Ctitle%3Ewishlist%3C/title%3E%3Cpath d='M65.58 90.82l10.49 9.91L65.58 90.82Zm-2.52 5.76a3.06 3.06 0 0 1 0 6.12H7.12a7.09 7.09 0 0 1-5-2.1h0a7.1 7.1 0 0 1-2.09-5V7.12a7.06 7.06 0 0 1 2.1-5h0A7.1 7.1 0 0 1 7.12 0H91.63a7.1 7.1 0 0 1 5 2.09l.21.23a7.16 7.16 0 0 1 1.88 4.8V49a3.06 3.06 0 0 1-6.12 0V7.12a1 1 0 0 0-.22-.62l-.08-.08a1 1 0 0 0-.7-.3H7.12a1 1 0 0 0-.7.3h0a1 1 0 0 0-.29.7V95.58a1 1 0 0 0 .3.7h0a1 1 0 0 0 .7.29ZM95.44 67.42c3.54-3.7 6-6.89 11.5-7.52 10.24-1.17 19.65 9.32 14.47 19.64-1.47 2.94-4.47 6.44-7.78 9.87C110 93.18 106 96.87 103.14 99.67l-7.69 7.63-6.36-6.12C81.44 93.82 69 84.54 68.55 73.06c-.28-8 6.07-13.2 13.37-13.11 6.53.09 9.29 3.33 13.52 7.47Zm-71.66 0A3.62 3.62 0 1 1 20.16 71a3.62 3.62 0 0 1 3.62-3.62Zm14.71 7.27a3.15 3.15 0 0 1 0-6.19h11.8a3.15 3.15 0 0 1 0 6.19ZM23.78 46a3.62 3.62 0 1 1-3.62 3.61A3.62 3.62 0 0 1 23.78 46Zm14.71 6.94a3.1 3.1 0 0 1 0-6.11H62.58a3.1 3.1 0 0 1 0 6.11ZM23.78 24.6a3.62 3.62 0 1 1-3.62 3.62 3.62 3.62 0 0 1 3.62-3.62Zm14.71 6.65a2.84 2.84 0 0 1-2.57-3.05 2.85 2.85 0 0 1 2.57-3.06H72.38A2.85 2.85 0 0 1 75 28.2a2.84 2.84 0 0 1-2.57 3.05Z'/%3E%3C/svg%3E");
+}
+
+
+/* Hero Styling */
+
+#hero-section {
+  height: 500px;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.25)), url(assets/dayfornight.jpg);
+  background-position: center, center;
+  background-size: cover, cover;
+  -webkit-background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+	background-attachment: fixed, fixed;
+  color: white;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  text-shadow: 1px 1px black;
+}
+
+#hero-section-div {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.container, .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#headshot {
+  max-width: min(60%,200px);
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-filter: drop-shadow(2px 2px 2px #AAAAAA);
+  filter: drop-shadow(2px 2px 2px #AAAAAA);
+}
+
+/* Mission Styling */
+
+#mission-section {
+  max-width: 1000px;
+  display: block;
+  margin: auto;
+  padding: 30px;
+}
+
+#mission-image {
+  max-height: 600px;
+  max-width: 85%;
+  border-radius: 25px;
+  margin: auto;
+  display: block;
+}
+
+/* Skills Styling */
+
+#skills-section {
+  max-width: 1000px;
+  display: block;
+  margin: auto;
+  padding: 30px;  
+}
+
+.skill-icon {
+  height: 100px;
+  margin: auto;
+  padding: 10px 0 10px 0;
+  display: block;
+  -webkit-filter: drop-shadow(2px 2px 2px #888888);
+  filter: drop-shadow(2px 2px 2px #888888);
+}
+
+/* Inspiration Styling */
+
+#inspiration-section {
+  padding: 25px 30px 50px 30px;
+  display: block;
+  margin: auto;
+  max-width: 1000px;
+}
+
+.carousel-caption h5 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: min(20px, 2.5vw);
+}
+
+.carousel-caption h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: min(15px, 2vw);
+}
+
+.carousel-caption {
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.carousel-item img {
+  border-radius: 25px;
+}
+.carousel {
+  padding-top: 25px;
+  width: 100%;
+  min-width: 200px;
+}
+
+/* Contact Styling */
+.container {
+  min-height:100%;
+  text-align:center;
+}
+}
+#contact-section {
+  padding: 25px 50px 25px 50px;
+  
+}
+
+.social-buttons{
+  display:inline-block;
+  background: #111111;
+  padding: 20px 5px 5px 20px;
+  border-radius:10px;
+  text-align:center;
+  margin:20px 10px;
+}
+  
+.social-margin {
+  margin-right: 15px;
+}
+
+.social-icon {
+  margin-bottom: 15px;
+   box-sizing: border-box;
+  -moz-border-radius: 138px;
+  -webkit-border-radius: 138px;
+  border-radius: 138px;
+  border: 5px solid;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  line-height: 1px;
+  padding-top: 11px;
+  transition: all 0.5s;
+}
+.social-icon:hover {
+    transform: rotate(360deg)scale(1.3);
+    background: gray !important;
+    border-color: gray;
+}
+
+/* Instagram Button Styling */
+.instagram {
+  font-size: 22px;
+  padding-top: 14px;
+  background: linear-gradient(200deg, #4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75);
+   border: 0px;
+  color: #ffffff;
+ 
+}
+
+.instagram:hover {
+  background: linear-gradient(200deg, #4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75);
+  padding-top: 14px;
+  border: 0px solid;
+}
+
+/* Linkedin Button Styling */
+
+.linkedin {
+  font-size: 24px;
+  padding-top: 8px;
+  padding-left: 1px;
+  background-color: #0976b4;
+  color: #ffffff;
+  border-color: #0976b4;
+}
+
+.linkedin :hover {
+  color: white;
+}
+
+/* Tiktok Button Styling */
+
+.tiktok {
+  font-size: 22px;
+  padding-top: 9px;
+  background-color: white;
+  color: #ffffff;
+  border-color: white;
+}
+
+.tiktok:hover {
+  color: white;
+}
+
+/* Youtube Button Styling */
+
+.youtube {
+  font-size: 22px;
+  padding-top: 9px;
+  padding-left: 0px;
+  background: #bb0000;
+  color: #ffffff;
+  border-color: #bb0000;
+}
+
+.youtube  :hover {
+  color: white;
+}
+
+/* Soundcloud Button Styling */
+
+.soundcloud {
+  font-size: 22px;
+  padding-top: 9px;
+  padding-left: 0px;
+  background-color: #ff3a00;
+  color: #ffffff;
+  border-color: #ff3a00;
+  
+}
+
+.soundcloud :hover {
+  color: white;
+}
+
+/* Spotify Button Styling */
+
+.spotify {
+  font-size: 22px;
+  padding-top: 9px;
+  padding-left: 0px;
+  background-color: #1bcc5a;
+  color: #ffffff;
+  border-color: #1bcc5a;
+  
+}
+
+.spotify :hover {
+  color: white;
+}
+
+/* Footer Styling */
+#footer-section {
+  padding: 20px;
+}
+
+/* Math Blurb Styling */
+
+#blurb {
+  color: white;
+  background-color: #111111;
+  margin: 20px;
+  padding: 50px;
+  max-width: 1000px;
+  display: block;
+  margin: auto;
+}
+
+/* Personal Page Styling */
+#personal-blurb {
+  padding: 50px 50px 0 50px;
+  max-width: 1000px;
+  display: block;
+  margin: auto;
+}
+
+#music-fashion-images {
+  max-width: 2000px;
+  display: block;
+  margin: auto;
+  padding: 25px;
+}
+
+.responsive {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 25px;
+  display: block;
+  margin: 25px auto 25px auto;
+}
+
+/* hey its connor, you have to show me what else you add to this when you are done, this is incredible */
