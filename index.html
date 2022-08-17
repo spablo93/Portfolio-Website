@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">  
+    <!-- TODO: Replace this with your title -->
+    <title>Stephen Pablo</title>  
+    <!-- 
+			TODO: Add Bootstrap CSS link tag from: 
+    	https://getbootstrap.com/docs/5.1/getting-started/introduction 
+		-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- 
+			TODO: Add Bootstrap Icons link tag from: 
+			https://icons.getbootstrap.com/
+			(Remember, the CDN link is towards the bottom of the page!)
+		-->
+
+    <!-- Custom styles (these can extend the default Bootstrap styles) -->  
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+
+    <!-- TODO: Paste Navbar code and customize links -->  
+    <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
+      <div class="container-fluid d-flex">
+        <a class="navbar-brand nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hearts" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z"/>
+</svg></a>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#mission-section">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills-section">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#inspiration-section">Inspiration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact-section">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="math/math.html">Math</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personal/personal.html">Personal</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero section -->
+  	<section id="hero-section" class="position-relative container-fluid text-center">
+      <div id="hero-section-div">
+        <img class="rounded-circle border border-5" id="headshot" src="assets/headshot.jpg" alt="Stephen's Headshot">
+        <h1 class="text-center">Stephen Pablo</h1>
+        <p class="text-center"> ex-mathematician</p>
+      </div>
+  	</section>
+    
+  	<!-- Mission/Meet-me section -->
+    <section id="mission-section">
+      <h2 class="text-center">About</h2>
+      <div class="row align-items-center justify-content-around" style="margin-top:25px;">
+        <div class="col-sm-12 col-md-6">
+          <img id="mission-image" src="assets/aboutme.JPG" alt="Image of Stephen smiling">
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <p style="margin-top:25px;">
+            My name is Stephen (they/them) and I am an ex-mathematician who recently moved to Austin, TX. 
+          </p>
+          <p>
+            I have an MA and BS in Mathematics and after 4 years in a Math PhD program, I recently decided to leave academia to pursue a career in software engineering. I first learned coding in 2014 (though have not learned much about web development until recently), and I have always thoroughly enjoyed it. I want to create and build impactful projects using the amazing programming tools available to us.
+          </p>
+        </div>
+      </div>
+      
+  	</section>
+  
+    <!-- Skills section -->
+    
+    <section id="skills-section">
+      <h2 class="text-center">Skills</h2>
+      <div id="skills-container" class="d-flex flex-wrap justify-content-around">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-3" >
+            <img style="-webkit-filter: drop-shadow(2px 2px 2px #e95421);
+  filter: drop-shadow(2px 2px 2px #e95421);" class="skill-icon" src="assets/HTML5.png" alt="HTML-5 Logo">
+            <h5 class="text-center">HTML</h5>
+            <p class="text-center">Structuring web-content for desktop and mobile using modern semantic HTML.</p>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <img style="-webkit-filter: drop-shadow(2px 2px 2px #224ce3);
+  filter: drop-shadow(2px 2px 2px #224ce3);" class="skill-icon" src="assets/CSS3.png" alt="CSS-3 Logo">
+            <h5 class="text-center">CSS</h5>
+            <p class="text-center">Styling web designs and interfaces using mordern CSS.</p>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <img style="-webkit-filter: drop-shadow(2px 2px 2px #5b3680);
+  filter: drop-shadow(2px 2px 2px #5b3680);" class="skill-icon" src="assets/bootstrap.png" alt="Bootstrap Logo">
+            <h5 class="text-center">Bootstrap 5</h5>
+            <p class="text-center">Developing websites using Bootstrap framework.</p>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <img class="skill-icon" src="assets/coding.png" alt="Coding Logo">
+            <h5 class="text-center">General Programming</h5>
+            <p class="text-center">Significant experience with C++, Python, and MATLAB.</p>
+          </div>
+        </div>
+      </div>
+  	</section>
+  
+    <!-- Inspiration Section -->
+    <section id="inspiration-section">
+  	  <h2 class="text-center">Inspiration</h2>
+      <!-- Carousel -->
+      <div id="carouselExampleCaptions" class="carousel slide mx-auto" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/SOPHIE.jpg" class="d-block w-100" alt="Image of SOPHIE">
+            <div class="carousel-caption d-md-block">
+              <h5>There’s a huge amount of work to be done socially, culturally. There’s a huge gap between where we are now and where I imagine we could be. The places that our imaginations can take us are so far away from what we’re presented with a lot of the time, so I can’t get too excited about anything happening now. I’m really excited about what should be happening in the future.</h5>
+              <h6>SOPHIE, <em>Arte TRACKS (2018)</em></h6>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/Shygirl.jpg" class="d-block w-100" alt="Image of Shygirl">
+            <div class="carousel-caption d-md-block">
+              <h5>Once you start doing anything you’re constantly testing your limitations and boundaries. The edges start to form of what you think you can or can’t do, and what you haven’t done yet, and what you want to do more of.</h5>
+              <h6>Shygirl, <em>Rolling Stone (2021)</em></h6>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/MeganTheeStallion.jpg" class="d-block w-100" alt="Image of Megan Thee Stallion">
+            <div class="carousel-caption d-md-block">
+              <h5>My music is me letting the world know how confident I am in myself, and me basically telling other women, and guys, how confident and how comfortable I believe they should be. I just want [the fans] to feel as good as me and know that there's nothing wrong with being unapologetically themselves."</h5>
+              <h6>Megan Thee Stallion, <em>ELLE (2019)</em></h6>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/KevinParker.jpg" class="d-block w-100" alt="Image of Kevin Parker">
+            <div class="carousel-caption d-md-block">
+              <h5>When you start thinking about judgment it affects your perspective like a disease. It infects everything you do. If you were suddenly someone who was able to realize deep within yourself that you’re not doing it for the people who are judging, you’re doing it for the people who see the best in you, it’s inspiring.</h5>
+              <h6>Kevin Parker, <em>Complex (2015)</em></h6>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact-section">
+      <h2 class="text-center">Contact</h2>
+      <div class="container">
+        <div class="social-buttons">
+          <div class="row">
+          <!-- Instagram  Button -->
+          <div class="col-sm-6 col-md-4 col-lg-2">
+          <a href="https://www.instagram.com/homotopies/" target="blank" class="social-margin"> 
+            <div class="social-icon instagram">
+              <i class="fa fa-instagram" aria-hidden="true"></i> 
+            </div>
+          </a>
+          </div>
+          <!-- LinkedIn Button -->
+          <div class="col-sm-6 col-md-4 col-lg-2">
+          <a href="https://www.linkedin.com/in/stephen-pablo-7b987ba4/" class="social-margin" target="blank">
+            <div class="social-icon linkedin">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </div> 
+          </a>
+          </div>
+        <!-- Github Button -->
+          <div class="col-sm-6 col-md-4 col-lg-2">
+            <a href="https://www.tiktok.com/@homotopies"  target="blank"  class="social-margin">
+              <div class="social-icon tiktok">
+                <svg width="42px" height="42px" viewBox="0 0 50 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Tiktok</title>
+                  <g id="Icon/Social/tiktok-color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Group-7" transform="translate(8.000000, 6.000000)">
+                        <path d="M29.5248245,9.44576327 C28.0821306,9.0460898 26.7616408,8.29376327 25.6826204,7.25637551 C25.5109469,7.09719184 25.3493143,6.92821224 25.1928245,6.75433469 C23.9066204,5.27833469 23.209151,3.38037551 23.2336408,1.42290612 L17.3560898,1.42290612 L17.3560898,23.7086204 C17.3560898,27.7935184 15.1520082,29.9535184 12.416498,29.9535184 C11.694049,29.9611102 10.9789469,29.8107429 10.3213959,29.5124571 C9.6636,29.2144163 9.07951837,28.7758041 8.60955918,28.2272327 C8.1398449,27.6789061 7.79551837,27.0340898 7.60180408,26.3385796 C7.4078449,25.6430694 7.36890612,24.9132735 7.48743673,24.2008653 C7.60596735,23.4884571 7.87902857,22.8105796 8.28751837,22.2154776 C8.69625306,21.6198857 9.23037551,21.1212735 9.85241633,20.7546612 C10.474702,20.3878041 11.1694776,20.1617633 11.8882531,20.0924571 C12.6070286,20.023151 13.3324163,20.1122939 14.0129878,20.3535184 L14.0129878,14.3584163 C13.4889061,14.2430694 12.9530694,14.1862531 12.416498,14.1894367 L12.3917633,14.1894367 C10.2542939,14.1943347 8.16604898,14.8325388 6.39127347,16.0234776 C4.61649796,17.2149061 3.23429388,18.9051918 2.41976327,20.8812735 C1.60523265,22.8578449 1.39486531,25.0310694 1.8151102,27.1269061 C2.2351102,29.2227429 3.2671102,31.1469061 4.78033469,32.6564571 C6.29380408,34.1660082 8.22066122,35.1933551 10.3174776,35.6082122 C12.4142939,36.0230694 14.5870286,35.8073143 16.561151,34.9878857 C18.5355184,34.1682122 20.2226204,32.7820898 21.409151,31.0041306 C22.5959265,29.2264163 23.2289878,27.136702 23.228498,24.9992327 L23.228498,12.8155592 C25.5036,14.392702 28.2244163,15.134498 31.1289061,15.1886204 L31.1289061,9.68551837 C30.5869469,9.66568163 30.049151,9.5851102 29.5248245,9.44576327" id="Fill-1" fill="#FE2C55"></path>
+                        <path d="M25.195102,6.75428571 C24.7946939,6.47510204 24.4148571,6.1675102 24.0587755,5.83346939 C22.8210612,4.66016327 22.0062857,3.11020408 21.7420408,1.42530612 C21.6622041,0.954367347 21.6220408,0.47755102 21.6220408,0 L15.7444898,0 L15.7444898,22.6408163 C15.7444898,27.5069388 13.5404082,28.5183673 10.804898,28.5183673 C10.0829388,28.5262041 9.36783673,28.3758367 8.71028571,28.0773061 C8.0524898,27.7792653 7.46791837,27.3406531 6.99820408,26.7920816 C6.5282449,26.2437551 6.18440816,25.5989388 5.99044898,24.9034286 C5.7964898,24.2079184 5.75755102,23.4781224 5.87583673,22.7657143 C5.99461224,22.053551 6.26767347,21.3756735 6.67640816,20.7800816 C7.08489796,20.1847347 7.61902041,19.6861224 8.24106122,19.3195102 C8.86334694,18.952898 9.55787755,18.7266122 10.276898,18.6573061 C10.9959184,18.588 11.7208163,18.6773878 12.4016327,18.9183673 L12.4016327,12.9328163 C5.40489796,11.8236735 0,17.4783673 0,23.5760816 C0.00465306122,26.4426122 1.14514286,29.1898776 3.17191837,31.216898 C5.19869388,33.2434286 7.94595918,34.3839184 10.8124898,34.3885714 C16.7730612,34.3885714 21.6220408,30.7444898 21.6220408,23.5760816 L21.6220408,11.3924082 C23.8995918,12.9795918 26.6204082,13.7142857 29.524898,13.7632653 L29.524898,8.26040816 C27.9658776,8.18914286 26.4617143,7.66604082 25.195102,6.75428571" id="Fill-3" fill="#25F4EE"></path>
+                        <path d="M21.6220653,23.5764245 L21.6220653,11.392751 C23.8996163,12.9794449 26.6204327,13.7141388 29.5251673,13.7633633 L29.5251673,9.44581224 C28.0822286,9.04613878 26.7617388,8.29381224 25.6824735,7.25617959 C25.5110449,7.09724082 25.3494122,6.92826122 25.1926776,6.75438367 C24.7922694,6.4752 24.4126776,6.16736327 24.056351,5.83356735 C22.8186367,4.66026122 22.0041061,3.11030204 21.7396163,1.42540408 L17.3730857,1.42540408 L17.3730857,23.7111184 C17.3730857,27.7957714 15.1690041,29.9560163 12.4334939,29.9560163 C11.6569224,29.9538122 10.8918612,29.7681796 10.2005143,29.414302 C9.50941224,29.0601796 8.91186122,28.5476082 8.45635102,27.9182204 C7.49071837,27.3946286 6.72712653,26.5636898 6.2865551,25.5571592 C5.84573878,24.5508735 5.75341224,23.4260571 6.02377959,22.3609959 C6.29390204,21.2959347 6.91177959,20.3516082 7.77896327,19.6771592 C8.64639184,19.0027102 9.71365714,18.6365878 10.8122694,18.6365878 C11.3564327,18.6412408 11.8961878,18.7362612 12.4090041,18.9182204 L12.4090041,14.1894857 C10.304351,14.1921796 8.24647347,14.8093224 6.48786122,15.9657306 C4.72924898,17.1221388 3.3470449,18.7666286 2.51047347,20.6978939 C1.67390204,22.6291592 1.41969796,24.7627102 1.77896327,26.8362612 C2.13822857,28.9098122 3.09553469,30.8334857 4.53308571,32.3704653 C6.36271837,33.6848327 8.55945306,34.3906286 10.8122694,34.3884296 C16.7730857,34.3884296 21.6220653,30.7445878 21.6220653,23.5764245" id="Fill-5" fill="#000000"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <!-- Youtube Button -->
+          <div class="col-sm-6 col-md-4 col-lg-2">
+          <a href="https://www.youtube.com/channel/UCeZnfyOnljzgrHncEzEZzrQ" target="blank"  class="social-margin">
+            <div class="social-icon youtube">
+              <i class="fa fa-youtube" aria-hidden="true"></i>
+            </div> 
+          </a>
+          </div>
+          <!-- Soundcloud Button -->
+          <div class="col-sm-6 col-md-4 col-lg-2">
+          <a href="http://soundcloud.com/homotopies" target="blank" class="social-margin">
+            <div class="social-icon soundcloud">
+              <i class="fa fa-soundcloud" aria-hidden="true"></i>
+            </div> 
+          </a>
+          </div>
+          <!-- Spotify Button -->
+          <div class="col-sm-6 col-md-4 col-lg-2">
+          <a href="https://open.spotify.com/user/1218464724?si=i09fDwi7S3WS8mUCbLk8Og" target="blank" class="social-margin">
+            <div class="social-icon spotify">
+              <i class="fa fa-spotify" aria-hidden="true"></i>
+            </div> 
+          </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer section -->
+    <section id="footer-section" class="text-center align-middle">
+      <p>&copy; Stephen Pablo 2022</p>
+    </section>
+  
+    <!-- 
+  		TODO: Paste Bootstrap Javascript script tag from:
+  		https://getbootstrap.com/docs/5.1/getting-started/introduction/
+  	-->
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
