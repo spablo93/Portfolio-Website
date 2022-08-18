@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html style="background-color: white;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">  
+    <!-- TODO: Replace this with your title -->
+    <title>Stephen Pablo: Linear Algebra</title>  
+    <!-- 
+			TODO: Add Bootstrap CSS link tag from: 
+    	https://getbootstrap.com/docs/5.1/getting-started/introduction 
+		-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- 
+			TODO: Add Bootstrap Icons link tag from: 
+			https://icons.getbootstrap.com/
+			(Remember, the CDN link is towards the bottom of the page!)
+		-->
+
+    <!-- Custom styles (these can extend the default Bootstrap styles) -->  
+    
+    
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="style-math.css" rel="stylesheet" type="text/css" />
+    <script>
+			MathJax = {
+							tex: {
+											inlineMath: [
+															["$", "$"],
+															["\\(", "\\)"],
+														],
+											tags: "ams",
+										},
+						};
+		</script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </head>
+
+  <body>
+
+    <!-- TODO: Paste Navbar code and customize links -->  
+    <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
+      <div class="container-fluid d-flex">
+        <a class="navbar-brand nav-link" href="../"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hearts" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z"/>
+</svg></a>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../#mission-section">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../#skills-section">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../#inspiration-section">Inspiration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../#contact-section">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="math.html">Math</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../personal/personal.html">Personal</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <
+    <!-- Linear Algebra section -->
+    
+    <main id="main-doc" style="color: white;">
+			<section class="main-section" style="counter-reset: section 1 subsection 0;">
+				<article>
+					<header id="Vectors_in_Rn">
+						<h2>Vectors in $\mathbb{R}^n$</h2>
+					</header>
+					<section class="main-subsection">
+						<h3>Vector Basics</h3>
+						<p>Thus far, we have only looked at vectors in the context of solution vectors of a linear system. However, 
+							vectors have a much greater context and have many useful applications in fields like engineering, physics, 
+							and mathematics itself.</p>
+							<div class="definition_container">
+								<div class="definition">
+									<div class="definition_header">
+										<p><em>vector</em></p>
+									</div>
+									<div class="definition_text">
+										<p>
+											A (Euclidean) <em style="color: blue">vector</em> is a quantity that has only two 
+											components: magnitude (length) and direction.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="example">We can represent a vector in space with the following picture:
+								<p>INSERT IMAGE HERE</p>
+								<p>The magnitude is given by the distance between the head (arrowhead) and tail of the vector, and the 
+									direction of the vector is determined by the arrowhead.</p>
+							</div>
+							<div class="example">If a car is driving north on the $xy$-plane at $55\ \mathrm{mph}$, we can think of the 
+								velocity vector of the car having a length of $55$ going in the direction of the positive $y$-axis.</div>
+							<div class="remark">Vectors are not dependent on their location in space!</div>
+							<p><b>We can interpret vectors in three different ways:</b>
+								<ul>
+									<li>
+										<b>Geometric representation</b> - Physically in space (as in <b>Example 2.1.1</b>)
+									</li>
+									<li>
+										<b>Coordinate representation</b> - As a coordinate vector, say $\vec{x}=\begin{bmatrix}
+										x_0\\y_0
+								  \end{bmatrix}$. This gives explicit information about a vector—we can use 
+								  the coordinates to determine the geometric representation of the vector:
+								  <p>INSERT IMAGE HERE</p>
+								  <p>We obtain a vector in space by drawing a segment from the origin (tail) to the point given by the 
+									  vector coordinates (head). We can also interpret this coordinate vector in the form $(x_0,y_0)$ or 
+									  as a row vector $\begin{bmatrix}x_0&y_0\end{bmatrix}$. However, in most cases we will stick to 
+									  column vectors.</p>
+									</li>
+									<li><b>Abstract representation</b> - As some object, say, $\vec{v}$ which has certain properties.
+										e.g. we may know that $\vec{v}$ has length $1$, but we may not know its direction, or coordinates. 
+										The abstract representation is also useful when solving problems algebraically, if we want to 
+										simplify notation.</li>
+								</ul>
+							</p>
+							<p>It is important to be able to go between these different interpretations of vectors when solving problems. 
+								Viewing vectors geometrically may help you solve a geometric problem, while viewing vectors in coordinates 
+								or in abstract representation may be sufficient for solving algebraic problems.</p>
+							<div class="definition_container">
+								<div class="definition">
+									<div class="definition_header">
+										<p><em>The vector space $\mathbb{R}^n$</em></p>
+									</div>
+									<div class="definition_text">
+										<p>
+											For any positive integer $n$, we denote the set of vectors with $n$ real number coordinates by 
+											<em style="color: blue">$\mathbb{R}^n$</em>:
+											$$\mathbb{R}^n=\left\{\begin{bmatrix}
+												x_1\\x_2\\\vdots\\x_n
+												\end{bmatrix}\ \Bigg|\ x_1, x_2, \dots, x_n\in\mathbb{R}\right\}.$$
+										</p>
+									</div>
+								</div>
+							</div>
+							<p>We may later refer to $\mathbb{R}^n$ as <em>euclidean space</em> once we have a better understanding of what a <em>vector 
+								space</em> is, but for now, we won't worry about that language.</p>
+							<div class="example">$\mathbb{R}^1$ (or simply, $\mathbb{R}$) is the set of real numbers $x$, also known as the real line.</div>
+							<div class="example">$\mathbb{R}^2$ is the set of ordered pairs of real numbers $\begin{bmatrix}
+								x\\y
+								\end{bmatrix}$, also known as the Cartesian plane.</div>
+							<div class="example">$\mathbb{R}^3$ is the set of ordered triples of real numbers $\begin{bmatrix}
+								x\\y\\z
+								\end{bmatrix}$, also known as three-dimensional space.</div>
+							<p>We call $\mathbb{R}^n$ a <em>vector space</em> because we can perform two operations on vectors in $\mathbb{R}^n$ to obtain 
+								new vectors in $\mathbb{R}^n$ and these operations have a lot of nice algebraic properties:</p>
+							<ul style="display: grid; grid-template-columns: repeat(2, 1fr);">
+								<li><b>vector addition</b>$$\begin{bmatrix}
+									x_1\\x_2\\\vdots\\x_n
+							  \end{bmatrix}+\begin{bmatrix}
+							  y_1\\y_2\\\vdots\\y_n
+							  \end{bmatrix}=\begin{bmatrix}
+							  x_1+y_1\\x_2+y_2\\\vdots\\x_n+y_n
+							  \end{bmatrix}$$</li>
+							  <li><b>scalar multiplication</b>$$k\begin{bmatrix}
+								x_1\\x_2\\\vdots\\x_n
+						  		\end{bmatrix}=\begin{bmatrix}
+						  		kx_1\\kx_2\\\vdots\\kx_n
+						  		\end{bmatrix}$$</li>
+							</ul>
+							<div class="example">$$\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}3\\4\end{bmatrix}=\begin{bmatrix}4\\6\end{bmatrix}$$</div>
+							<div class="example">$$2\begin{bmatrix}-1\\5\end{bmatrix}=\begin{bmatrix}-2\\10\end{bmatrix}=\begin{bmatrix}-1\\5\end{bmatrix}+\begin{bmatrix}-1\\5\end{bmatrix}$$</div>
+							<div class="prop_container">
+								<div class="prop">
+									<div class="prop_header">
+										<p><em>Fundamental algebraic properties of $\mathbb{R}^n$</em></p>
+									</div>
+									<div class="prop_text">
+										<p>For any vectors $\vec{u}, \vec{v}, \vec{w}\in\mathbb{R}^n$ and scalars $k,m\in\mathbb{R}$, the following properties hold
+											<ul style="display: grid; grid-template-columns: repeat(2, auto); column-gap: 20px">
+												<li>$\vec{u}+\vec{v}=\vec{v}+\vec{u}$</li>
+												<li style="list-style: none;">(commutativity of vector addition)</li>
+												<li>$(\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w})$</li>
+												<li style="list-style: none;">(associativity of vector addition)</li>
+												<li>$\vec{u}+\vec{0}=\vec{u}$, where $\vec{0}$ is the zero <br>vector, whose coordinates are all $0$ </li>
+												<li style="list-style: none;">(existence of zero vector)</li>
+												<li>$\vec{u}+(-\vec{u})=\vec{0}$</li>
+												<li style="list-style: none;">(existence of additive inverse)</li>
+												<li>$k(\vec{u}+\vec{v})=k\vec{u}+k\vec{v}$</li>
+												<li style="list-style: none;">(distributive with respect to vector addition)</li>
+												<li>$(k+m)\vec{u}=k\vec{u}+m\vec{u}$</li>
+												<li style="list-style: none;">(distributive with respect to scalar addition)</li>
+												<li>$k(m\vec{u})=(km)\vec{u}$</li>
+												<li style="list-style: none;">(associativity of scalar multiplication)</li>
+												<li>$1\vec{u}=\vec{u}$</li>
+												<li style="list-style: none;">(existence of scalar multiplicative identity)</li>
+											</ul>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="prop_container">
+								<div class="prop">
+									<div class="prop_header">
+										<p><em>Additional properties of vectors in $\mathbb{R}^n$</em></p>
+									</div>
+									<div class="prop_text">
+										<p>These additional properties follow from the fundamental algebraic properties of $\mathbb{R}^n$. 
+											For any $\vec{u}\in \mathbb{R}^n$ and $k\in\mathbb{R}$, we have:
+											<ul>
+												<li>$0\vec{u}=\vec{0}$</li>
+												<li>$k\vec{0}=\vec{0}$</li>
+												<li>$(-1)\vec{u}=-\vec{u}$</li>
+											</ul>
+										</p>
+									</div>
+								</div>
+							</div>
+							<p><b>Geometric interpretation of vector operations</b></p>
+							<div class="example">
+								<p>To add two vectors together geometrically: what is the net displacement of moving first 
+									through $\vec{u}$ and then through $\vec{v}$?</p>
+								<p>INSERT IMAGE HERE</p>
+								<p>Vector addition satisfies the following <em>parallelogram rule</em>:</p>
+								<p>INSERT IMAGE HERE</p>
+							</div>
+							<p>On the other hand, scalar multiplication works as you would expect:</p>
+							<div class="example">
+								<p>Scaling $\vec{u}$ by factor $\frac{1}{3}$ results in a vector in the same direction as 
+									$\vec{u}$ but with one-third the length of $\vec{u}$:</p>
+								<p>INSERT IMAGE HERE</p>
+							</div>
+							<div class="example">
+								<p>Scaling $\vec{v}$ by factor $-2$ results in a vector in the opposite direction of $\vec{v}$ 
+									but with double the length of $\vec{v}$:</p>
+								<p>INSERT IMAGE HERE</p>
+							</div>
+					</section>
+					<section class="main-subsection">
+						<h3>Linear Combinations</h3>
+						<div class="definition_container">
+							<div class="definition">
+								<div class="definition_header">
+									<p><em>linear combination</em></p>
+								</div>
+								<div class="definition_text">
+									<p>
+										We define a <em style="color: blue">linear combination</em> of vectors
+										$\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k\in\mathbb{R}^n$ to be any vector of the form:
+										$$c_1\vec{v}_1+c_2\vec{v}_2+\cdots+c_k\vec{v}_k$$
+										where $c_1, c_2, \dots, c_k\in\mathbb{R}$.
+									</p>
+								</div>
+							</div>
+						</div>
+						<p>
+							So a linear combination of vectors is really just any vector that we can obtain by performing our 
+							linear operations (addition and scalar multiplication) on other vectors. It is the general way that 
+							we describe how to construct new vectors from any given set of vectors.
+						</p>
+						<div class="example">
+							<p>The vector $\vec{v}=\begin{bmatrix}
+								3\\-2
+								\end{bmatrix}$ is a linear combination of $\vec{e_1}=\begin{bmatrix}
+								1\\0
+								\end{bmatrix}$ and $\vec{e_2}=\begin{bmatrix}
+								0\\1
+								\end{bmatrix}$:</p>
+							<p>INSERT IMAGE HERE</p>
+						</div>
+						<div class="remark">
+							<p>Note that the vectors $\vec{e_1}$ and $\vec{e_2}$ determine the standard coordinate axes of $\mathbb{R}^2$. 
+								When we first learned how to plot a point such as $(x,y)=(3,2)$ on the standard coordinate plane, 
+								we learned to move $3$ units from the origin in the direction of the positive $x$-axis, and then 
+								move $-2$ units in the direction of the negative $y$-axis. 
+							</p>
+							<p>
+								Thinking about this in context of vectors in $\mathbb{R}^2$, we obtain the vector $\begin{bmatrix}
+								3\\-2
+								\end{bmatrix}$ as a linear combination of $\vec{e_1}$ and $\vec{e_2}$ by first moving $3$ units in 
+								the direction of the $\vec{e_1}$ vector and then $-2$ units in the direction of the $\vec{e_2}$ vector.
+							</p>
+							<p>
+								These $\vec{e_1}$ and $\vec{e_2}$ vectors are very important vectors in the context of linear algebra in $\mathbb{R}^2$.
+							</p>
+						</div>
+						<div class="definition_container">
+							<div class="definition">
+								<div class="definition_header">
+									<p><em>standard basis vectors of $\mathbb{R}^n$</em></p>
+								</div>
+								<div class="definition_text">
+									<p>
+										We call the following vectors 
+										$$\vec{e_1}=\begin{bmatrix}
+										1\\0\\ \vdots\\ 0
+										\end{bmatrix},\quad  \vec{e_2}=\begin{bmatrix}
+										0\\1\\ \vdots\\ 0
+										\end{bmatrix}, \quad \dots,\quad \vec{e_n}=\begin{bmatrix}
+										0\\0\\ \vdots\\ 1
+										\end{bmatrix},$$
+										the <em style="color: blue">standard basis vectors</em> of $\mathbb{R}^n$, where $\vec{e_i}$ has a $1$ in 
+										the $i$th coordinate and $0$'s elsewhere.
+									</p>
+									<p>
+										Any vector $\begin{bmatrix}
+										x_1\\x_2\\ \vdots\\ x_n
+										\end{bmatrix}\in\mathbb{R}^n$ can be written <em>uniquely</em> as a linear combination of the standard basis vectors:
+										$$\begin{bmatrix}
+										x_1\\x_2\\ \vdots\\ x_n
+										\end{bmatrix}=x_1\begin{bmatrix}
+										1\\0\\ \vdots\\ 0
+										\end{bmatrix}+x_2\begin{bmatrix}
+										0\\1\\ \vdots\\ 0
+										\end{bmatrix}+ \cdots+x_n\begin{bmatrix}
+										0\\0\\ \vdots\\ 1
+										\end{bmatrix}=x_1\vec{e_1}+x_2\vec{e_2} \cdots+x_n\vec{e_n}.$$
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="example">
+							<p>
+								The standard basis for $\mathbb{R}$ is $\set{1}=\set{e_1}$.
+							</p>
+							<p>
+								The standard basis for $\mathbb{R}^2$ is $\left\{\begin{bmatrix}
+								1\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\1
+								\end{bmatrix}\right\}=\set{\vec{e_1}, \vec{e_2}}$.
+							</p>
+							<p>
+								The standard basis for $\mathbb{R}^3$ is $\left\{\begin{bmatrix}
+								1\\0\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\1\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\0\\1
+								\end{bmatrix}\right\}=\set{\vec{e_1}, \vec{e_2},\vec{e_3}}$.
+							</p>
+							<p>
+								The standard basis for $\mathbb{R}^4$ is $\left\{\begin{bmatrix}
+								1\\0\\0\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\1\\0\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\0\\1\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\0\\0\\1
+								\end{bmatrix}\right\}=\{\vec{e_1}, \vec{e_2},\vec{e_3},\vec{e_4}\}$.
+							</p>
+							<p>
+								In general, when referring to standard basis vectors, it should be clear from context whether we are 
+								referring to those vectors in $\mathbb{R}$, $\mathbb{R}^2$, $\mathbb{R}^3$, $\mathbb{R}^n$, etc.
+							</p>
+						</div>
+						<div class="example">
+							<p>Is $\begin{bmatrix}
+								3\\0\\11
+								\end{bmatrix}$ a linear combination of $\begin{bmatrix}
+								2\\-1\\4
+								\end{bmatrix}$ and $\begin{bmatrix}
+								3\\-3\\1
+								\end{bmatrix}$?</p>
+							<p>
+								We want to know if we can write
+								$$c_1\begin{bmatrix}
+								2\\-1\\4
+								\end{bmatrix}+c_2\begin{bmatrix}
+								3\\-3\\1
+								\end{bmatrix}=\begin{bmatrix}
+								3\\0\\11
+								\end{bmatrix},$$
+								for some $c_1,c_2\in\mathbb{R}$. Note that this vector equation gives a system of equations
+								$$\begin{array}{rrl}
+								2c_1&+3c_2&=3\\
+								-c_1&-3c_2&=0\\
+								4c_1&+c_2&=11
+								\end{array},$$
+								with corresponding augemented system
+								$$\left[\begin{array}{cc|c}
+								2&3&3\\-1&-3&0\\4&1&11
+								\end{array}\right].$$
+								To see if we have a solution $\begin{bmatrix}
+								c_1\\c_2
+								\end{bmatrix}$ to the system, we simply row reduce the system, and obtain
+								$$\left[\begin{array}{cc|c}
+								1&0&3\\0&1&-1\\0&0&0
+								\end{array}\right].$$
+								So we have a solution $\begin{bmatrix}
+								c_1\\c_2
+								\end{bmatrix}=\begin{bmatrix}
+								3\\-1
+								\end{bmatrix}$. To check our solution is correct, we observe
+								$$3\begin{bmatrix}
+								2\\-1\\4
+								\end{bmatrix}-\begin{bmatrix}
+								3\\-3\\1
+								\end{bmatrix}=\begin{bmatrix}
+								3\\0\\11
+								\end{bmatrix},$$
+								so $\begin{bmatrix}
+								3\\0\\11
+								\end{bmatrix}$ is indeed a linear combination of $\begin{bmatrix}
+								2\\-1\\4
+								\end{bmatrix}$ and $\begin{bmatrix}
+								3\\-3\\1
+								\end{bmatrix}$
+							</p>
+						</div>
+						<div class="example">
+							<p>
+								Is $\begin{bmatrix}
+								1\\-2\\-2
+								\end{bmatrix}$ a linear combination of $\begin{bmatrix}
+								2\\-1\\4
+								\end{bmatrix}$ and $\begin{bmatrix}
+								3\\-3\\1
+								\end{bmatrix}$?
+							</p>
+							<p>
+								We can set up a augmented system analogous to that in <b>Example 2.2.3</b> and try to reduce the system:
+                <div class="row">
+                <div class="col-md-3 col-sm-12">
+                  $$\left[\begin{array}{cc|c}
+								2&3&1\\-1&-3&-2\\4&1&-2
+								\end{array}\right]$$
+                </div>
+                <div class="col-md-3 col-sm-12">
+                  $$\begin{array}{c}
+								R_1\leftrightarrow R_2\\ R_2+2R_1\to R_2\\ R_3+4R_1\to R_3
+								\end{array}$$
+                </div>
+                <div class="col-md-3 col-sm-12">
+                  $$\left[\begin{array}{cc|c}
+								-1&-3&-2\\0&-3&-3\\0&-11&-10
+								\end{array}\right]$$
+                </div>
+                <div class="col-md-3 col-sm-12"></div>
+                </div>
+                <div class="row">
+                
+                <div class="col-md-3 col-sm-12">
+                  $$\begin{array}{c}
+								-\frac{1}{3}R_2\rightarrow R_2\\ R_3+11R_2\to R_3
+								\end{array}$$
+                </div>
+                <div class="col-md-3 col-sm-12">
+                  $$\left[\begin{array}{cc|c}
+								-1&-3&-2\\0&1&1\\0&0&1
+								\end{array}\right]$$
+                </div>
+                <div class="col-md-3 col-sm-12"></div>
+                <div class="col-md-3 col-sm-12"></div>
+              </div>
+								but we see that the last row of the augmented system gives $0=1$, so the system has no solution. Therefore, 
+								we cannot write $\begin{bmatrix}
+								1\\-2\\-2
+								\end{bmatrix}$ as a linear combination of $\begin{bmatrix}
+								2\\-1\\4
+								\end{bmatrix}$ and $\begin{bmatrix}
+								3\\-3\\1
+								\end{bmatrix}$.
+							</p>
+						</div>
+						<section class="main-subsubsection">
+							<h4>Writing the solution to an inhomogeneous system in parametric vector form</h4>
+							<div class="example">
+								The general solution to the system
+								$$\begin{array}{rrrrl}
+								x_1	& -2x_2&+x_3&-x_4&=6\\
+								2x_1&-4x_2	&+5x_3&-11x_4&=-12\\
+								-x_1&+2x_2&-3x_3&+7x_4&=10
+								\end{array}$$
+								has the form $\vec{x}=\begin{bmatrix}
+								14+2r-2s\\
+								r\\
+								-8+3s\\
+								s
+								\end{bmatrix}$.
+								This solution can be written as a linear combination of constant vectors, often referred to as 
+								<em>parametric vector form</em>:
+                
+                $$\begin{align*}
+                  \vec{x}&=\begin{bmatrix}
+								14+2r-2s\\
+								r\\
+								-8+3s\\
+								s
+								\end{bmatrix}\\
+                \\
+                &=\begin{bmatrix}
+								14\\
+								0\\
+								-8\\
+								0
+								\end{bmatrix}+\begin{bmatrix}
+								2r\\
+								r\\
+								0\\
+								0
+								\end{bmatrix}+\begin{bmatrix}
+								-2s\\
+								0\\
+								3s\\
+								s
+								\end{bmatrix}\\
+                \\
+                &=\begin{bmatrix}
+								14\\
+								0\\
+								-8\\
+								0
+								\end{bmatrix}+r\begin{bmatrix}
+								2\\
+								1\\
+								0\\
+								0
+								\end{bmatrix}+s\begin{bmatrix}
+								-2\\
+								0\\
+								3\\
+								1
+								\end{bmatrix}
+                \end{align*}$$
+							</div>
+						</section>
+					</section>
+					<section class="main-subsection">
+						<h3>Span</h3>
+						<div class="definition_container">
+							<div class="definition">
+								<div class="definition_header">
+									<p><em>span, spanning set</em></p>
+								</div>
+								<div class="definition_text">
+									<p>
+										We define the <em style="color: blue">span</em> of the vectors 
+										$\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}$ as the set of all possible 
+										linear combinations of $\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}$:
+										$$\mathrm{span}\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}=\set{c_1\vec{v_1}+c_2\vec{v_2}+\cdots+ c_k\vec{v_k}\ |\ c_1, c_2, \dots, c_k\in\mathbb{R}}.$$
+									</p>
+									<p>If we label $V=\mathrm{span}\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}$, 
+										we say that $\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}$ 
+										<em style="color: blue">spans</em> $V$, or equivalently, $\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}$ 
+										is a <em style="color: blue">spanning set</em> for $V$.
+									</p>
+								</div>
+							</div>
+						</div>
+						<p>
+							We often call $\mathrm{span}\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}$ the <em>subspace spanned by</em>
+							$\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}$. Essentially, we can think of a span of vectors as a vector space 
+							contained inside of $\mathbb{R}^n$, because we can perform operations on vectors in the span to obtain new vectors 
+							within the span. Note that if we sum two linear combinations of $\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}$, 
+							we obtain another linear combination of those vectors. Similarly, if we scale a linear combination of 
+							$\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}$, we obtain another linear combination of those vectors.
+						</p>
+						<p>
+							For now, don't think too much about what this <em>subspace</em> terminology means. We will explore this concept
+							in more detail later in the course.
+						</p>
+						<div class="example">
+							<p>
+							By <b>Example 2.2.3</b>, we know that $\begin{bmatrix}
+							3\\0\\11
+							\end{bmatrix}\in\mathrm{span}\left\{\begin{bmatrix}
+								2\\-1\\4
+								\end{bmatrix},\begin{bmatrix}
+								3\\-3\\1
+								\end{bmatrix}\right\}$, and by <b>Example 2.2.4</b>, $\begin{bmatrix}
+							1\\-2\\-2
+							\end{bmatrix}\notin\mathrm{span}\left\{\begin{bmatrix}
+								2\\-1\\4
+								\end{bmatrix},\begin{bmatrix}
+								3\\-3\\1
+								\end{bmatrix}\right\}$. 
+							</p>
+							<p>
+								However, there are (infinitely) many other vectors in $\mathrm{span}\left\{\begin{bmatrix}
+								2\\-1\\4
+								\end{bmatrix},\begin{bmatrix}
+								3\\-3\\1
+								\end{bmatrix}\right\}$, such as
+              <div class="row">
+                
+                <div class="col-md-3 col-sm-12">
+                  $$\begin{bmatrix}
+							-1\\-1\\-7
+							\end{bmatrix}=-2\begin{bmatrix}
+							2\\-1\\4
+							\end{bmatrix}+\begin{bmatrix}
+							3\\-3\\1
+							\end{bmatrix},$$
+                </div>
+                <div class="col-md-3 col-sm-12">
+                  $$\begin{bmatrix}
+							0\\0\\0
+							\end{bmatrix}=0\begin{bmatrix}
+							2\\-1\\4
+							\end{bmatrix}+0\begin{bmatrix}
+							3\\-3\\1
+							\end{bmatrix},$$
+                </div>
+                <div class="col-md-3 col-sm-12">
+                  $$\text{ and } \begin{bmatrix}
+							2\sqrt{2}+3\pi\\-\sqrt{2}-3\pi\\4\sqrt{2}+\pi
+							\end{bmatrix}=\sqrt{2}\begin{bmatrix}
+							2\\-1\\4
+							\end{bmatrix}+\pi\begin{bmatrix}
+							3\\-3\\1
+							\end{bmatrix}.$$
+                </div>
+                <div class="col-md-3 col-sm-12"></div>
+              </div>
+							  
+						</p>
+						</div>
+						<div class="example">
+							$B=\left\{\begin{bmatrix}
+							1\\0
+							\end{bmatrix}, \begin{bmatrix}
+							0\\1
+							\end{bmatrix}\right\}$ is a spanning set for $\mathbb{R}^2$, since, by <b>Definition 2.2.2</b>, we see any vector in $\mathbb{R}^2$ can be written as linear combination of the standard basis:
+						\begin{align*}
+						\mathrm{span}(B) & =\mathrm{span}\left\{\begin{bmatrix} 
+							1\\0
+							\end{bmatrix}, \begin{bmatrix}
+							0\\1
+							\end{bmatrix}\right\}\\
+									& =\left\{x\begin{bmatrix}     
+							1\\0
+							\end{bmatrix}+y\begin{bmatrix}
+							0\\1
+							\end{bmatrix}\ \Big|\ x,y\in\mathbb{R}\right\}\\
+									& =\left\{\begin{bmatrix}      
+							x\\y
+							\end{bmatrix}\ \Big|\ x,y\in\mathbb{R}\right\}\\
+									& =\mathbb{R}^2                      
+						\end{align*}
+						</div>
+						<div class="example">
+							Is $S=\left\{\begin{bmatrix}
+								1\\-1
+								\end{bmatrix}, \begin{bmatrix}
+								-4\\5
+								\end{bmatrix}, \begin{bmatrix}
+								3\\-2
+								\end{bmatrix}\right\}$ a spanning set for $\mathbb{R}^2$?
+							<p>
+								We want to know if any vector $\begin{bmatrix}
+								x\\y
+								\end{bmatrix}\in\mathbb{R}^2$ can be written as a linear combination of $\begin{bmatrix}
+								1\\-1
+								\end{bmatrix}$, $\begin{bmatrix}
+								-4\\5
+								\end{bmatrix}$, and $\begin{bmatrix}
+								3\\-2
+								\end{bmatrix}$. That is, we want to know if the vector equation
+								\begin{equation}
+									c_1\begin{bmatrix}
+									1\\-1
+									\end{bmatrix}+c_2\begin{bmatrix}
+									-4\\5
+									\end{bmatrix}+c_3\begin{bmatrix}
+									3\\-2
+									\end{bmatrix}=\begin{bmatrix}
+									x\\y
+									\end{bmatrix}
+								\end{equation}
+								has a solution $\begin{bmatrix}
+								c_1\\c_2\\c_3
+								\end{bmatrix}$, regardless of the value of $x$ and $y$.
+							</p>
+							<p>
+								We can row reduce the corresponding augmented system to determine if we always have a solution:
+								<div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    $$\left[\begin{array}{ccc|c}
+								1&-4&3&x\\
+								-1&5&-2&y
+								\end{array}\right]$$
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                    $$\begin{array}{c} \\ R_2+R_1\to R_2 \end{array}$$
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                    $$\left[\begin{array}{ccc|c}
+								1&-4&3&x\\
+								0&1&1&x+y
+								\end{array}\right]$$
+                  </div>
+                </div>
+                  <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    $$\begin{array}{c} \\ R_1+4R_2\to R_1 \end{array}$$
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                    $$\left[\begin{array}{ccc|c}
+								1&0&7&5x+4y\\
+								0&1&1&x+y
+								\end{array}\right]$$
+                  </div>
+                </div>
+							</p>
+							<p>
+								So we have that $\begin{bmatrix}
+								c_1\\c_2\\c_3
+								\end{bmatrix}=\begin{bmatrix}
+								5x+4y-7c_3\\x+y-c_3\\c_3
+								\end{bmatrix}$ is a solution, where $c_3$ is a free variable, and so any $\begin{bmatrix}
+								x\\y
+								\end{bmatrix}\in\mathbb{R}^2$ can be written as the following linear combination
+								$$\begin{bmatrix}
+								x\\y
+								\end{bmatrix}=(5x+4y-7c_3)\begin{bmatrix}
+								1\\-1
+								\end{bmatrix}+(x+y-c_3)\begin{bmatrix}
+								-4\\5
+								\end{bmatrix}+c_3\begin{bmatrix}
+								3\\-2
+								\end{bmatrix}.$$
+							</p>
+							<p>
+								Therefore, $S=\left\{\begin{bmatrix}
+								1\\-1
+								\end{bmatrix}, \begin{bmatrix}
+								-4\\5
+								\end{bmatrix}, \begin{bmatrix}
+								3\\-2
+								\end{bmatrix}\right\}$ is a spanning set for $\mathbb{R}^2$.
+							</p>
+						</div>
+						<div class="example">
+							Why is $C=\left\{\begin{bmatrix}
+								2\\-1
+								\end{bmatrix}, \begin{bmatrix}
+								-4\\2
+								\end{bmatrix}\right\}$ not a spanning set for $\mathbb{R}^2$?
+							<p>
+								If we tried to find a solution to the equation
+								\begin{equation}
+									c_1\begin{bmatrix}
+									2\\-1
+									\end{bmatrix}+c_2\begin{bmatrix}
+									-4\\2
+									\end{bmatrix}=\begin{bmatrix}
+									x\\y
+									\end{bmatrix}
+								\end{equation}
+								we would see that after row reducing the corresponding augmented system, we obtain 
+                <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                    
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                    
+                  </div>
+                </div>
+                  <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    $$\left[\begin{array}{ccc|c}
+								2&-4&x\\-1&2&y
+								\end{array}\right]$$
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                    $$R_1+R_2\to R_1$$
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                    $$\left[\begin{array}{ccc|c}
+								1&-2&x+y\\-1&2&y
+								\end{array}\right]$$
+                  </div>
+                </div>
+                  <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    $$R_2+R_1\to R_2$$
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                    $$\left[\begin{array}{ccc|c}
+								1&-2&x+y\\0&0&x+2y
+								\end{array}\right].$$
+                  </div>
+                </div>
+							</p>
+							<p>
+								So we see that we only have a solution to the system if $x+2y=0$, or equivalently, if $x=-2y$. This 
+								gives a restriction for vectors in $\mathrm{span}\left\{\begin{bmatrix}
+								2\\-1
+								\end{bmatrix}, \begin{bmatrix}
+								-4\\2
+								\end{bmatrix}\right\}$, so $\mathrm{span}\left\{\begin{bmatrix}
+								2\\-1
+								\end{bmatrix}, \begin{bmatrix}
+								-4\\2
+								\end{bmatrix}\right\}\neq \mathbb{R}^2$. The only vectors in $\mathrm{span}\left\{\begin{bmatrix}
+								2\\-1
+								\end{bmatrix}, \begin{bmatrix}
+								-4\\2
+								\end{bmatrix}\right\}$ are vectors of the form $\begin{bmatrix}
+								x\\y
+								\end{bmatrix}=\begin{bmatrix}
+								-2t\\t
+								\end{bmatrix}$.
+							</p>
+							<p>
+								To geometrically interpret why $C=\left\{\begin{bmatrix}
+								2\\-1
+								\end{bmatrix}, \begin{bmatrix}
+								-4\\2
+								\end{bmatrix}\right\}$ isn't a spanning set for $\mathbb{R}^2$, consider the following graph:
+							</p>
+							<p>INSERT IMAGE HERE</p>
+							<p>
+								We see that both $\begin{bmatrix}
+								2\\-1
+								\end{bmatrix}$ and $\begin{bmatrix}
+								-4\\2
+								\end{bmatrix}$ actually lie on the same line, so any vector in $\mathrm{span}\left\{\begin{bmatrix}
+									2\\-1
+									\end{bmatrix}, \begin{bmatrix}
+									-4\\2
+									\end{bmatrix}\right\}$ also lies on this same line, because if we linearly combine $\begin{bmatrix}
+								2\\-1
+								\end{bmatrix}$ and $\begin{bmatrix}
+								-4\\2
+								\end{bmatrix}$ in any way, we just get another vector on that line.
+							</p>
+							<p>
+								So we see there's no way to obtain a vector like $\begin{bmatrix}
+								2\\1
+								\end{bmatrix}$ in the given span, because it does not lie on the determined line.
+							</p>
+						</div>
+						<section class="main-subsubsection">
+							<h4>
+								Writing the solution set to a homogeneous system as a span of vectors
+							</h4>
+							<div class="example">
+								Consider the following homogeneous system
+								$$\begin{array}{rrrrl}
+								x_1	& -2x_2&+x_3&-x_4&=0\\
+								2x_1&-4x_2	&+5x_3&-11x_4&=0\\
+								-x_1&+2x_2&-3x_3&+7x_4&=0
+								\end{array}$$
+								with corresponding solution set
+								$$S=\left\{\begin{bmatrix}
+									2x_2-2x_4\\
+									x_2\\
+									3x_4\\
+									x_4
+									\end{bmatrix}\ \Bigg|\ x_2, x_4\in\mathbb{R}\right\}.$$
+								We can express the solution set of this system as a span of constant vectors:
+								\begin{align*}
+									S & =\left\{\begin{bmatrix}      
+									2x_2\\
+									x_2\\
+									0\\
+									0
+									\end{bmatrix}+\begin{bmatrix}
+									-2x_4\\
+									0\\
+									3x_4\\
+									x_4
+									\end{bmatrix}\ \Bigg|\ x_2, x_4\in\mathbb{R}\right\}\\[8 pt]
+									& =\left\{x_2\begin{bmatrix}   
+									2\\
+									1\\
+									0\\
+									0
+									\end{bmatrix}+x_4\begin{bmatrix}
+									-2\\
+									0\\
+									3\\
+									1
+									\end{bmatrix}\ \Bigg|\ x_2, x_4\in\mathbb{R}\right\}\\[8 pt]
+									& =\mathrm{span}\left\{\begin{bmatrix} 
+									2\\
+									1\\
+									0\\
+									0
+									\end{bmatrix},\begin{bmatrix}
+									-2\\
+									0\\
+									3\\
+									1
+									\end{bmatrix}\right\}
+								\end{align*}
+							</div>
+						</section>
+					</section>
+					<section class="main-subsection">
+						<h3>Linear Independence</h3>
+						<p>Consider the standard basis for $\mathbb{R}^2$: $S=\set{\begin{bmatrix}
+								1\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\1
+								\end{bmatrix}}=\set{\vec{e_1},\vec{e_2}}$. We know that $S$ is a spanning set for $\mathbb{R}^2$ because any 
+								vector can be written as a linear combination of the vectors in $S$. But the reason why we call this a 
+								<em>basis</em> for $\mathbb{R}^2$ is because any vector $\begin{bmatrix}
+								x\\y
+								\end{bmatrix}\in\mathbb{R}^2$ can in fact be written <em>uniquely</em> as a linear combination of $\vec{e_1}=\begin{bmatrix}
+								1\\0
+								\end{bmatrix}$ and $\vec{e_2}=\begin{bmatrix}
+								0\\1
+								\end{bmatrix}$:
+						</p>
+						\begin{equation}
+							\begin{bmatrix}
+								x \\y
+							\end{bmatrix}=x\begin{bmatrix}
+							1\\0
+							\end{bmatrix}+y\begin{bmatrix}
+							0\\1
+							\end{bmatrix}=x\vec{e_1}+y\vec{e_2}.
+						\end{equation}
+						<p>
+							That is, the <em>only</em> way to write $\begin{bmatrix}
+							x\\y
+							\end{bmatrix}$ as a linear combination of $\vec{e_1}$ and $\vec{e_2}$ is by choosing $x$ to be the coefficient of $\vec{e_1}$ 
+							and $y$ to be the coefficient of $\vec{e_2}$ in the linear combination. 
+						</p>
+						<p>
+							One way we can think about what the coefficients of $\vec{e_1}$ and $\vec{e_2}$ in the equation (2.3) mean: the standard basis 
+							vectors essentially determine the standard coordinate axes on the plane. That is, we determine the <em>unique</em> coordinates 
+							of $\begin{bmatrix}
+							x\\y
+							\end{bmatrix}$ relative to the standard coordinate axes by moving $x$ units in the direction of $\vec{e_1}$ and then moving $y$ 
+							units in the direction of $\vec{e_2}$.
+						</p>
+						<p>
+							INSERT IMAGE HERE
+						</p>
+						<p>
+							In general, we would like a <em>unique</em> way to choose coordinates relative to coordinate axes.
+						</p>
+						<p>
+							On the other hand, let's now consider $S'=\left\{\begin{bmatrix}
+								1\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\1
+								\end{bmatrix}, \begin{bmatrix}
+								1\\1
+								\end{bmatrix}\right\}=\set{\vec{e_1},\vec{e_2},\vec{e}}$ which is also a spanning set for $\mathbb{R}^2$. 
+								However, note that any vector $\begin{bmatrix}
+								x\\y
+								\end{bmatrix}\in\mathbb{R}^2$ can be written as a linear combination of the vectors in $S'$ in infinitely 
+								many ways. So if we determined a third axis in $\mathbb{R}^2$ by the vector $\vec{e}$, say, the $w$-axis, there would 
+								not be a unique way to choose coordinates for our vectors relative these three axes:
+						</p>
+						<p>
+							INSERT IMAGE HERE
+						</p>
+						<p>
+							Taking $\vec{v}=\begin{bmatrix}
+							3\\2
+							\end{bmatrix}$ in standard coordinates, we see that
+						</p>
+						\begin{align*}
+							\vec{v} & =3\vec{e_1}+2\vec{e_2},         \\
+							\vec{v} & =2\vec{e}+\vec{e_1},            \\
+							\vec{v} & =3\vec{e_2}+4\vec{e_1}-\vec{e}. 
+						\end{align*}
+						<p>
+							So $S'$ essentially has redundant information as a spanning set. So there's no point of constructing a third $w$-axis in 
+							$\mathbb{R}^2$, because we can already obtain any vector in $\mathbb{R}^2$ relative to the $x$ and $y$ axes.
+						</p>
+						<p>
+							Ideally, we always want to work with spanning sets for $\mathbb{R}^n$ that give us a unique way to represent any vector in the 
+							space. How can we guarantee that a spanning set will give a unique representation of any vector? The reason that $S$ gives us 
+							a unique way to represent any vector in $\mathbb{R}^2$ is because it is a <em>linearly independent</em> set.
+						</p>
+						<div class="definition_container">
+							<div class="definition">
+								<div class="definition_header">
+									<p><em>linearly independent</em></p>
+								</div>
+								<div class="definition_text">
+									<p>
+										A set of vectors $S=\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}$ is <em style="color: blue">linearly independent</em> if none of the 
+										vectors in the set can be written as a linear combination of the others.
+									</p>
+									<p>
+										If at least one vector in $S$ can be written as a linear combination of the others, we say that $S$ is <em style="color: blue">linearly dependent</em>.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="example">
+							The set $S'=\left\{\begin{bmatrix}
+								1\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\1
+								\end{bmatrix}, \begin{bmatrix}
+								1\\1
+								\end{bmatrix}\right\}$ is linearly dependent, since
+							$\begin{bmatrix}
+								1 \\1
+							\end{bmatrix}=\begin{bmatrix}
+							1\\0
+							\end{bmatrix}+ \begin{bmatrix}
+							0\\1
+							\end{bmatrix}$. On the other hand, $S=\left\{\begin{bmatrix}
+								1\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\1
+								\end{bmatrix}\right\}=\set{\vec{e_1},\vec{e_2}}$ is linearly independent, since $\vec{e_1}$ and $\vec{e_2}$ aren't multiples of one another.
+						</div>
+						<div class="example">
+							Is the set $S=\set{\begin{bmatrix}
+								1\\0\\0
+								\end{bmatrix}, \begin{bmatrix}
+								0\\1\\0
+								\end{bmatrix},\begin{bmatrix}
+								0\\0\\1
+								\end{bmatrix}}=\set{\vec{e_1},\vec{e_2},\vec{e_3}}$ linearly independent?
+							<p>
+								Can we write
+								$$\begin{bmatrix}
+								1\\0\\0
+								\end{bmatrix}=b_1\begin{bmatrix}
+								0\\1\\0
+								\end{bmatrix}+b_2\begin{bmatrix}
+								0\\0\\1
+								\end{bmatrix}, \quad \begin{bmatrix}
+								0\\1\\0
+								\end{bmatrix}=c_1\begin{bmatrix}
+								1\\0\\0
+								\end{bmatrix}+c_2\begin{bmatrix}
+								0\\0\\1
+								\end{bmatrix}, \quad \begin{bmatrix}
+								0\\0\\1
+								\end{bmatrix}=d_1\begin{bmatrix}
+								1\\0\\0
+								\end{bmatrix}+d_2\begin{bmatrix}
+								0\\1\\0
+								\end{bmatrix}?$$
+							</p>
+							<p>
+								Note that all three systems above have no solution, so the set $S$ is linearly independent.
+							</p>
+						</div>
+						<p>
+							Now, we see it can be a bit inefficient to determine if a set is linearly independent by testing 
+							if each vector is a linear combination of the others. If we have a set with, say, 20 vectors in $\mathbb{R}^{35}$, 
+							we wouldn't even want to make a computer solve 20 different systems to determine linear independence of the 
+							set. Thankfully, we have a more useful definition that allows us to answer the question of linear independence 
+							by solving one system of equations:
+						</p>
+					</section>
+				</article>
+			</section>
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <a href="linearalgebra2.html">Chapter 2 ></a>
+      </div>
+    </div>
+      <!-- Footer section -->
+    <section id="footer-section" class="text-center">
+      <p>&copy; Stephen Pablo 2022</p>
+    </section>
+    </main>
+    
+  
+    <!-- 
+  		TODO: Paste Bootstrap Javascript script tag from:
+  		https://getbootstrap.com/docs/5.1/getting-started/introduction/
+  	-->
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Bungee+Shade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+html {
+  background-color: white;
+}
+body {
+  background-color: white;
+  color: #111111;
+  font-family: sans-serif;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.figure {
+  width: 100%;
+  height: auto;
+  border-radius: 50px;
+  display: block;
+  margin: auto;
+  
+}
+
+#main-doc {
+  counter-set: section 0;
+  padding: 50px 0 30px 0;
+  
+}
+
+.main-section {
+  color: black;
+  background-color: white;
+  counter-reset: subsection;
+  padding: 30px 20px 30px 30px;
+}
+.main-subsection {
+  color: black;
+  counter-reset: subsubsection definition example theorem remark prop;
+  padding: 20px 0 20px 0;
+}
+.main-subsubsection {
+  color: black;
+  padding: 10px 0 10px 0;
+}
+h2:before {
+  counter-increment: section;
+  content: "Chapter " counter(section) ": ";
+}
+h3:before {
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) " ";
+}
+h4:before {
+  counter-increment: subsubsection;
+  content: counter(section) "." counter(subsection) "." counter(subsubsection)
+    " ";
+}
+
+
+.definition_header {
+  counter-increment: definition;
+
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+  color: white;
+  padding-top: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.definition_header:before {
+  content: "Definition " counter(section) "." counter(subsection) "."
+    counter(definition) ": ";
+  
+  white-space: pre;
+  font-weight: bold;
+}
+.definition_text {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background-color: lightblue;
+  justify-content: left;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 3px solid blue;
+  padding: 15px 15px 0 15px;
+}
+.definition {
+  max-width: 650px;
+  min-width: 0;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  
+}
+.definition_container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.theorem_header {
+  counter-increment: theorem;
+
+  display: flex;
+  flex-direction: row;
+  background-color: green;
+  color: white;
+  padding-top: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.theorem_header:before {
+  content: "Theorem " counter(section) "." counter(subsection) "."
+    counter(theorem) ": ";
+  white-space: pre;
+  font-weight: bold;
+}
+.theorem_text {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background-color: lightgreen;
+  padding: 15px 15px 0 15px;
+  justify-content: left;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 3px solid green;
+}
+.theorem {
+  max-width: 650px;
+  min-width: 0;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.theorem_container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.prop_header {
+  counter-increment: prop;
+
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+  color: white;
+  padding-top: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.prop_header:before {
+  content: "Proposition " counter(section) "." counter(subsection) "."
+    counter(prop) ": ";
+  white-space: pre;
+  font-weight: bold;
+}
+.prop_text {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background-color: pink;
+  padding: 15px 15px 0 15px;
+  justify-content: left;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 3px solid red;
+  padding: 15px;
+}
+.prop {
+  max-width: 650px;
+  min-width: 0;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.prop_container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.example {
+  counter-increment: example;
+  margin-bottom: 15px;
+}
+.example:before {
+  content: "Example " counter(section) "." counter(subsection) "."
+    counter(example) ": ";
+  font-weight: bold;
+}
+
+.remark {
+  counter-increment: remark;
+  margin-bottom: 15px;
+}
+.remark:before {
+  content: "Remark " counter(section) "." counter(subsection) "."
+    counter(remark) ": ";
+  font-weight: bold;
+}
+
+li {
+  margin-bottom: 5px;
+}
+@counter-style alphaparenthesis {
+  system: extends lower-alpha;
+  prefix: "(";
+  suffix: ") ";
+}
+.alphalist {
+  color: black;
+}
+.alphalist > li {
+  list-style-type: alphaparenthesis;
+}
+
+#footer-section {
+  padding: 20px 0 20px 0;
+  color: black;
+}
+
+.numbered_equation_container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+.equation {
+            width: 100%;
+            overflow-x: auto;
+        }
