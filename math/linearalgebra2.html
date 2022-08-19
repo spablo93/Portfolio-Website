@@ -1025,13 +1025,13 @@
 								\end{bmatrix}\right\}=\set{\vec{e_1},\vec{e_2}}$ is linearly independent, since $\vec{e_1}$ and $\vec{e_2}$ aren't multiples of one another.
 						</div>
 						<div class="example">
-							Is the set $S=\set{\begin{bmatrix}
+							Is the set $S=\left\{\begin{bmatrix}
 								1\\0\\0
 								\end{bmatrix}, \begin{bmatrix}
 								0\\1\\0
 								\end{bmatrix},\begin{bmatrix}
 								0\\0\\1
-								\end{bmatrix}}=\set{\vec{e_1},\vec{e_2},\vec{e_3}}$ linearly independent?
+								\end{bmatrix}\right\}=\set{\vec{e_1},\vec{e_2},\vec{e_3}}$ linearly independent?
 							<p>
 								Can we write
 								$$\begin{bmatrix}
@@ -1065,6 +1065,25 @@
 							set. Thankfully, we have a more useful definition that allows us to answer the question of linear independence 
 							by solving one system of equations:
 						</p>
+						<div class="theorem_container">
+							<div class="theorem">
+								<div class="theorem_header">
+									<p><em>Equivalent definition of linearly independent</em></p>
+								</div>
+								<div class="theorem_text">
+									<p>
+										A set of vectors $S=\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}$ is  <em style="color: blue">linearly independent</em>$\index{linearly independent}$ if the only solution to the following homogeneous vector equation
+										\begin{equation}\label{eq:linindep}
+											c_1\vec{v_1}+c_2\vec{v_2}+\cdots+c_k\vec{v_k}=\vec{0}
+										\end{equation}
+										is $c_1=c_2=\cdots=c_k=0$.
+									</p>
+									<p>
+										If ($\ref{eq:linindep}$) has a non-trivial solution such that not all $c_i=0$, then $S$ is <em style="color: blue">linearly dependent</em>$\index{linearly dependent}$.
+									</p>
+								</div>
+							</div>
+						</div>
 					</section>
 				</article>
 			</section>
