@@ -101,7 +101,7 @@
 								</div>
 							</div>
 							<div class="example">We can represent a vector in space with the following picture:
-								<p>INSERT IMAGE HERE</p>
+								<img class="figure" style="max-width: max(100px,10%)" src="./images/2_1_1Dvector.jpg" alt="">
 								<p>The magnitude is given by the distance between the head (arrowhead) and tail of the vector, and the 
 									direction of the vector is determined by the arrowhead.</p>
 							</div>
@@ -118,7 +118,8 @@
 										x_0\\y_0
 								  \end{bmatrix}$. This gives explicit information about a vector—we can use 
 								  the coordinates to determine the geometric representation of the vector:
-								  <p>INSERT IMAGE HERE</p>
+								  <img class="figure" style="max-width: max(200px,15%)" src="./images/2_1_1Dcoordrep.jpg" alt="">
+								  
 								  <p>We obtain a vector in space by drawing a segment from the origin (tail) to the point given by the 
 									  vector coordinates (head). We can also interpret this coordinate vector in the form $(x_0,y_0)$ or 
 									  as a row vector $\begin{bmatrix}x_0&y_0\end{bmatrix}$. However, in most cases we will stick to 
@@ -226,20 +227,20 @@
 							<div class="example">
 								<p>To add two vectors together geometrically: what is the net displacement of moving first 
 									through $\vec{u}$ and then through $\vec{v}$?</p>
-								<p>INSERT IMAGE HERE</p>
+								<img class="figure" style="max-width: max(250px,30%)" src="./images/2_1_8Dvectors.jpg" alt="">
 								<p>Vector addition satisfies the following <em>parallelogram rule</em>:</p>
-								<p>INSERT IMAGE HERE</p>
+								<img class="figure" style="max-width: max(250px,30%)" src="./images/2_1_8Dvectoraddition.jpg" alt="">
 							</div>
 							<p>On the other hand, scalar multiplication works as you would expect:</p>
 							<div class="example">
 								<p>Scaling $\vec{u}$ by factor $\frac{1}{3}$ results in a vector in the same direction as 
 									$\vec{u}$ but with one-third the length of $\vec{u}$:</p>
-								<p>INSERT IMAGE HERE</p>
+								<img class="figure" style="max-width: max(250px,30%)" src="./images/2_1_8Dscalevector1.jpg" alt="">
 							</div>
 							<div class="example">
 								<p>Scaling $\vec{v}$ by factor $-2$ results in a vector in the opposite direction of $\vec{v}$ 
 									but with double the length of $\vec{v}$:</p>
-								<p>INSERT IMAGE HERE</p>
+								<img class="figure" style="max-width: max(250px,30%)" src="./images/2_1_8Dscalevector2.jpg" alt="">
 							</div>
 					</section>
 					<section class="main-subsection">
@@ -272,7 +273,7 @@
 								\end{bmatrix}$ and $\vec{e_2}=\begin{bmatrix}
 								0\\1
 								\end{bmatrix}$:</p>
-							<p>INSERT IMAGE HERE</p>
+							<img class="figure" style="max-width: max(400px, 60%)" src="./images/2_2_1Dlincomb.jpg" alt="linear combination">
 						</div>
 						<div class="remark">
 							<p>Note that the vectors $\vec{e_1}$ and $\vec{e_2}$ determine the standard coordinate axes of $\mathbb{R}^2$. 
@@ -428,37 +429,29 @@
 							<p>
 								We can set up a augmented system analogous to that in <b>Example 2.2.3</b> and try to reduce the system:
                 <div class="row">
-                <div class="col-md-3 col-sm-12">
-                  $$\left[\begin{array}{cc|c}
+                <div class="col-md-4 col-sm-12">
+                  $$\begin{array}{c}\begin{array}{c}
+				  \phantom{x} \\ \phantom{x} \\ \phantom{x}
+				  \end{array}\\[8 pt] \left[\begin{array}{cc|c}
 								2&3&1\\-1&-3&-2\\4&1&-2
-								\end{array}\right]$$
+								\end{array}\right]\end{array}$$
                 </div>
-                <div class="col-md-3 col-sm-12">
-                  $$\begin{array}{c}
-								R_1\leftrightarrow R_2\\ R_2+2R_1\to R_2\\ R_3+4R_1\to R_3
-								\end{array}$$
-                </div>
-                <div class="col-md-3 col-sm-12">
-                  $$\left[\begin{array}{cc|c}
+               
+                <div class="col-md-4 col-sm-12">
+                  $$\begin{array}{c}\begin{array}{c}
+				  R_1\leftrightarrow R_2\\ R_2+2R_1\to R_2\\ R_3+4R_1\to R_3
+				  \end{array} \\[8 pt] \left[\begin{array}{cc|c}
 								-1&-3&-2\\0&-3&-3\\0&-11&-10
-								\end{array}\right]$$
+								\end{array}\right]\end{array}$$
                 </div>
-                <div class="col-md-3 col-sm-12"></div>
-                </div>
-                <div class="row">
-                
-                <div class="col-md-3 col-sm-12">
-                  $$\begin{array}{c}
-								-\frac{1}{3}R_2\rightarrow R_2\\ R_3+11R_2\to R_3
-								\end{array}$$
-                </div>
-                <div class="col-md-3 col-sm-12">
-                  $$\left[\begin{array}{cc|c}
+
+                <div class="col-md-4 col-sm-12">
+                  $$\begin{array}{c}\begin{array}{c} \phantom{x}\\
+				  -\frac{1}{3}R_2\rightarrow R_2\\ R_3+11R_2\to R_3
+				  \end{array}\\[8 pt]\left[\begin{array}{cc|c}
 								-1&-3&-2\\0&1&1\\0&0&1
-								\end{array}\right]$$
+								\end{array}\right]\end{array}$$
                 </div>
-                <div class="col-md-3 col-sm-12"></div>
-                <div class="col-md-3 col-sm-12"></div>
               </div>
 								but we see that the last row of the augmented system gives $0=1$, so the system has no solution. Therefore, 
 								we cannot write $\begin{bmatrix}
@@ -589,37 +582,35 @@
 								\end{bmatrix},\begin{bmatrix}
 								3\\-3\\1
 								\end{bmatrix}\right\}$, such as
-              <div class="row">
-                
-                <div class="col-md-3 col-sm-12">
-                  $$\begin{bmatrix}
-							-1\\-1\\-7
-							\end{bmatrix}=-2\begin{bmatrix}
-							2\\-1\\4
-							\end{bmatrix}+\begin{bmatrix}
-							3\\-3\\1
-							\end{bmatrix},$$
-                </div>
-                <div class="col-md-3 col-sm-12">
-                  $$\begin{bmatrix}
-							0\\0\\0
-							\end{bmatrix}=0\begin{bmatrix}
-							2\\-1\\4
-							\end{bmatrix}+0\begin{bmatrix}
-							3\\-3\\1
-							\end{bmatrix},$$
-                </div>
-                <div class="col-md-3 col-sm-12">
-                  $$\text{ and } \begin{bmatrix}
-							2\sqrt{2}+3\pi\\-\sqrt{2}-3\pi\\4\sqrt{2}+\pi
-							\end{bmatrix}=\sqrt{2}\begin{bmatrix}
-							2\\-1\\4
-							\end{bmatrix}+\pi\begin{bmatrix}
-							3\\-3\\1
-							\end{bmatrix}.$$
-                </div>
-                <div class="col-md-3 col-sm-12"></div>
-              </div>
+						<div class="row">
+							<div class="col-md-4 col-sm-12">
+							$$\begin{bmatrix}
+										-1\\-1\\-7
+										\end{bmatrix}=-2\begin{bmatrix}
+										2\\-1\\4
+										\end{bmatrix}+\begin{bmatrix}
+										3\\-3\\1
+										\end{bmatrix},$$
+							</div>
+							<div class="col-md-4 col-sm-12">
+							$$\begin{bmatrix}
+										0\\0\\0
+										\end{bmatrix}=0\begin{bmatrix}
+										2\\-1\\4
+										\end{bmatrix}+0\begin{bmatrix}
+										3\\-3\\1
+										\end{bmatrix},$$
+							</div>
+							<div class="col-md-4 col-sm-12">
+							$$\text{ and } \begin{bmatrix}
+										2\sqrt{2}+3\pi\\-\sqrt{2}-3\pi\\4\sqrt{2}+\pi
+										\end{bmatrix}=\sqrt{2}\begin{bmatrix}
+										2\\-1\\4
+										\end{bmatrix}+\pi\begin{bmatrix}
+										3\\-3\\1
+										\end{bmatrix}.$$
+							</div>
+						</div>
 							  
 						</p>
 						</div>
@@ -682,33 +673,25 @@
 							<p>
 								We can row reduce the corresponding augmented system to determine if we always have a solution:
 								<div class="row">
-                  <div class="col-md-3 col-sm-12">
-                    $$\left[\begin{array}{ccc|c}
-								1&-4&3&x\\
-								-1&5&-2&y
-								\end{array}\right]$$
-                  </div>
-                  <div class="col-md-3 col-sm-12">
-                    $$\begin{array}{c} \\ R_2+R_1\to R_2 \end{array}$$
-                  </div>
-                  <div class="col-md-3 col-sm-12">
-                    $$\left[\begin{array}{ccc|c}
-								1&-4&3&x\\
-								0&1&1&x+y
-								\end{array}\right]$$
-                  </div>
-                </div>
-                  <div class="row">
-                  <div class="col-md-3 col-sm-12">
-                    $$\begin{array}{c} \\ R_1+4R_2\to R_1 \end{array}$$
-                  </div>
-                  <div class="col-md-3 col-sm-12">
-                    $$\left[\begin{array}{ccc|c}
-								1&0&7&5x+4y\\
-								0&1&1&x+y
-								\end{array}\right]$$
-                  </div>
-                </div>
+								<div class="col-md-4 col-sm-12">
+									$$\begin{array}{c} \\[8 pt]\left[\begin{array}{ccc|c}
+												1&-4&3&x\\
+												-1&5&-2&y
+												\end{array}\right]\end{array}$$
+								</div>
+								<div class="col-md-4 col-sm-12">
+									$$ \begin{array}{c} R_2+R_1\to R_2\\[8 pt]\left[\begin{array}{ccc|c}
+												1&-4&3&x\\
+												0&1&1&x+y
+												\end{array}\right]\end{array}$$
+								</div>
+								<div class="col-md-4 col-sm-12">
+									$$\begin{array}{c}R_1+4R_2\to R_1 \\[8 pt] \left[\begin{array}{ccc|c}
+												1&0&7&5x+4y\\
+												0&1&1&x+y
+												\end{array}\right]\end{array}$$
+								</div>
+								</div>
 							</p>
 							<p>
 								So we have that $\begin{bmatrix}
@@ -756,50 +739,23 @@
 									\end{bmatrix}
 								\end{equation}
 								we would see that after row reducing the corresponding augmented system, we obtain 
-                <div class="row">
-                  <div class="col-md-3 col-sm-12">
-                    
-                  </div>
-                  <div class="col-md-3 col-sm-12">
-                    
-                  </div>
-                  <div class="col-md-3 col-sm-12">
-                    
-                  </div>
-                </div>
-                  <div class="row">
-                  <div class="col-md-3 col-sm-12">
-                    
-                  </div>
-                  <div class="col-md-3 col-sm-12">
-                    
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3 col-sm-12">
-                    $$\left[\begin{array}{ccc|c}
-								2&-4&x\\-1&2&y
-								\end{array}\right]$$
-                  </div>
-                  <div class="col-md-3 col-sm-12">
-                    $$R_1+R_2\to R_1$$
-                  </div>
-                  <div class="col-md-3 col-sm-12">
-                    $$\left[\begin{array}{ccc|c}
-								1&-2&x+y\\-1&2&y
-								\end{array}\right]$$
-                  </div>
-                </div>
-                  <div class="row">
-                  <div class="col-md-3 col-sm-12">
-                    $$R_2+R_1\to R_2$$
-                  </div>
-                  <div class="col-md-3 col-sm-12">
-                    $$\left[\begin{array}{ccc|c}
-								1&-2&x+y\\0&0&x+2y
-								\end{array}\right].$$
-                  </div>
-                </div>
+								<div class="row">
+								<div class="col-md-4 col-sm-12">
+									$$\begin{array}{c} \\[8 pt]\left[\begin{array}{ccc|c}
+												2&-4&x\\-1&2&y
+												\end{array}\right]\end{array}$$
+								</div>
+								<div class="col-md-4 col-sm-12">
+									$$\begin{array}{c}R_1+R_2\to R_1 \\[8 pt] \left[\begin{array}{ccc|c}
+												1&-2&x+y\\-1&2&y
+												\end{array}\right]\end{array}$$
+								</div>
+								<div class="col-md-4 col-sm-12">
+									$$\begin{array}{c} R_2+R_1\to R_2 \\[8 pt] \left[\begin{array}{ccc|c}
+									1&-2&x+y\\0&0&x+2y
+									\end{array}\right]\end{array}.$$
+								</div>
+								</div>
 							</p>
 							<p>
 								So we see that we only have a solution to the system if $x+2y=0$, or equivalently, if $x=-2y$. This 
@@ -828,7 +784,9 @@
 								-4\\2
 								\end{bmatrix}\right\}$ isn't a spanning set for $\mathbb{R}^2$, consider the following graph:
 							</p>
-							<p>INSERT IMAGE HERE</p>
+							<br>
+							<img class="figure" style="max-width: max(400px,50%)" src="./images/2_3_4Dspanset.jpg" alt="vectors in the set lie on the same line">
+							<br>
 							<p>
 								We see that both $\begin{bmatrix}
 								2\\-1
@@ -946,9 +904,7 @@
 							\end{bmatrix}$ relative to the standard coordinate axes by moving $x$ units in the direction of $\vec{e_1}$ and then moving $y$ 
 							units in the direction of $\vec{e_2}$.
 						</p>
-						<p>
-							INSERT IMAGE HERE
-						</p>
+						<img class="figure" style="max-width: max(30%,300px)" src="./images/2_4_0Dstandbasis.jpg" alt="the standard basis defines the standard coordinate axes">
 						<p>
 							In general, we would like a <em>unique</em> way to choose coordinates relative to coordinate axes.
 						</p>
@@ -966,9 +922,7 @@
 								many ways. So if we determined a third axis in $\mathbb{R}^2$ by the vector $\vec{e}$, say, the $w$-axis, there would 
 								not be a unique way to choose coordinates for our vectors relative these three axes:
 						</p>
-						<p>
-							INSERT IMAGE HERE
-						</p>
+						<img class="figure" style="max-width: max(50%,300px)" src="./images/2_4_0Dextraaxis.jpg" alt="redundant coordinate axis">
 						<p>
 							Taking $\vec{v}=\begin{bmatrix}
 							3\\2
@@ -1034,25 +988,35 @@
 								\end{bmatrix}\right\}=\set{\vec{e_1},\vec{e_2},\vec{e_3}}$ linearly independent?
 							<p>
 								Can we write
-								$$\begin{bmatrix}
-								1\\0\\0
-								\end{bmatrix}=b_1\begin{bmatrix}
-								0\\1\\0
-								\end{bmatrix}+b_2\begin{bmatrix}
-								0\\0\\1
-								\end{bmatrix}, \quad \begin{bmatrix}
-								0\\1\\0
-								\end{bmatrix}=c_1\begin{bmatrix}
-								1\\0\\0
-								\end{bmatrix}+c_2\begin{bmatrix}
-								0\\0\\1
-								\end{bmatrix}, \quad \begin{bmatrix}
-								0\\0\\1
-								\end{bmatrix}=d_1\begin{bmatrix}
-								1\\0\\0
-								\end{bmatrix}+d_2\begin{bmatrix}
-								0\\1\\0
-								\end{bmatrix}?$$
+								<div class="row">
+									<div class="col-lg-4 col-sm-12">
+										$$\begin{bmatrix}
+										1\\0\\0
+										\end{bmatrix}=b_1\begin{bmatrix}
+										0\\1\\0
+										\end{bmatrix}+b_2\begin{bmatrix}
+										0\\0\\1
+										\end{bmatrix},$$
+									</div>
+									<div class="col-lg-4 col-sm-12">
+										$$\begin{bmatrix}
+										0\\1\\0
+										\end{bmatrix}=c_1\begin{bmatrix}
+										1\\0\\0
+										\end{bmatrix}+c_2\begin{bmatrix}
+										0\\0\\1
+										\end{bmatrix},$$
+									</div>
+									<div class="col-lg-4 col-sm-12">
+										$$\begin{bmatrix}
+										0\\0\\1
+										\end{bmatrix}=d_1\begin{bmatrix}
+										1\\0\\0
+										\end{bmatrix}+d_2\begin{bmatrix}
+										0\\1\\0
+										\end{bmatrix}?$$
+									</div>
+								</div>
 							</p>
 							<p>
 								Note that all three systems above have no solution, so the set $S$ is linearly independent.
@@ -1072,29 +1036,508 @@
 								</div>
 								<div class="theorem_text">
 									<p>
-										A set of vectors $S=\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}$ is  <em style="color: blue">linearly independent</em>$\index{linearly independent}$ if the only solution to the following homogeneous vector equation
+										A set of vectors $S=\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}$ is  <em style="color: blue">linearly independent</em> if the only solution to the following homogeneous vector equation
 										\begin{equation}\label{eq:linindep}
 											c_1\vec{v_1}+c_2\vec{v_2}+\cdots+c_k\vec{v_k}=\vec{0}
 										\end{equation}
 										is $c_1=c_2=\cdots=c_k=0$.
 									</p>
 									<p>
-										If ($\ref{eq:linindep}$) has a non-trivial solution such that not all $c_i=0$, then $S$ is <em style="color: blue">linearly dependent</em>$\index{linearly dependent}$.
+										If ($\ref{eq:linindep}$) has a non-trivial solution such that not all $c_i=0$, then $S$ is <em style="color: blue">linearly dependent</em>.
 									</p>
 								</div>
 							</div>
 						</div>
+						<div class="remark">
+							Careful! It is <em>always</em> true that the equation $c_1\vec{v_1}+c_2\vec{v_2}+\cdots+c_k\vec{v_k}=\vec{0}$ has the trivial solution 
+							$\begin{bmatrix}
+							c_1\\c_2\\\vdots\\c_k
+							\end{bmatrix}=\begin{bmatrix}
+							0\\0\\\vdots\\0
+							\end{bmatrix}$. However, it could still have non-trivial solutions as well. To determine linear independence, we need that the equation has <em>only</em> the trivial solution, and no other solutions.
+						</div>
+						<div class="proof">
+						<p>
+							We will next prove that the definition of <em>linear independent</em> in <b>Theorem 2.4.1</b> is equivalent to <b>Definition 2.4.1</b>.
+						</p>
+	
+						<p>
+							<em>Proof.</em> Let $S=\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_k}}\subset \mathbb{R}^n$ and suppose that none of the vectors in $S$ can be written as a linear combination of the other vectors in $S$.
+						</p>
+						<p>
+							Then consider the equation
+							\begin{equation}\label{eq:linindep0}
+								c_1\vec{v_1}+c_2\vec{v_2}+\cdots+c_k\vec{v_k}=\vec{0}.
+							\end{equation}
+							We want to show that this equation has \textit{only} the trivial solution $c_1=c_2=\cdots=c_k=0$. 
+						</p>
+						<p>
+							Assume on the contrary that the above equation has a non-trivial solution such that, $c_1\neq0$. Then we could rearrange equation ($\ref{eq:linindep0}$) in the following way:
+							\begin{equation}\label{eq:linindep1}
+								c_2\vec{v_2}+c_3\vec{v_3}+\cdots+c_k\vec{v_k}=-c_1\vec{v_1}.
+							\end{equation}
+							and then we can divide equation ($\ref{eq:linindep1}$) by $-c_1$, since $c_1\neq 0$, and we obtain
+							\begin{equation}
+								-\frac{c_2}{c_1}\vec{v_2}-\frac{c_3}{c_1}\vec{v_3}-\cdots-\frac{c_{k}}{c_1}\vec{v_k}=\vec{v_1}.
+							\end{equation}
+							and so we can write $\vec{v_1}$ as a linear combinations of the other vectors in the set $\vec{v_2}, \vec{v_3}, \dots, \vec{v_k}$. But this contradicts the fact that none of the vectors in 
+							$S$ can be written as a linear combination of the other vectors in $S$. So our assumption that equation ($\ref{eq:linindep0}$) had a non-trivial solution in which $c_1\neq 0$ led to a contradiction, and so 
+							it must be that equation ($\ref{eq:linindep0}$) cannot have a solution in which $c_1\neq 0$. By a similar argument, equation (2.5) cannot have a solution in which $c_2, c_3, \dots, c_k\neq 0$, and so it 
+							must be that equation ($\ref{eq:linindep0}$) has <em>only</em> the trivial solution.
+						</p>
+						<p>
+							Thus, we can conclude that if none of the vectors in $S$ can be written as a linear combination of the other vectors in $S$, then equation ($\ref{eq:linindep0}$) has only the trivial solution.
+						</p>
+						<p>
+							Conversely, suppose the following equation 
+							\begin{equation}\label{eq:linindep00}
+								c_1\vec{v_1}+c_2\vec{v_2}+\cdots+c_k\vec{v_k}=\vec{0}.
+							\end{equation}
+							has only the trivial solution $c_1=c_2=\cdots=c_k=0$. Then the equivalent equation
+							\begin{equation}\label{eq:linindep11}
+								c_2\vec{v_2}+c_3\vec{v_3}+\cdots+c_k\vec{v_k}=-c_1\vec{v_1}.
+							\end{equation}
+							must only have the trivial solution $c_1=c_2=\cdots=c_k=0$. However, if we \textit{could} write $\vec{v_1}$ as a linear combination of the other vectors in the set, then equation ($\ref{eq:linindep11}$) would have a solution such that $c_1=-1\neq 0$, since we don't have such a solution, then $\vec{v_1}$ cannot be written as a linear combination of the other vectors in $S$.
+						</p>
+						<p>
+							By a similar argument, each vector $\vec{v_2}, \vec{v_3}, \dots, \vec{v_k}$ cannot be written as a linear combination of the other vectors in $S$.
+						</p>
+						<p>
+							Thus, we can conclude that if equation ($\ref{eq:linindep00}$) has only the trivial solution, then none of the vectors in $S$ can be written as a linear combination of the other vectors in $S$.
+						</p>
+						<p>
+							So the definition in <b>Theorem 2.4.1</b> is indeed equivalent to <b>Definition 2.4.1</b>. From now on, we will more often use the definition of <b>Theorem 2.4.1</b> to answer questions of linear independence. $$\tag*{$\square$}$$
+						</p>
+						</div>
+						<div class="example">
+							Is $S=\left\{\begin{bmatrix}
+								0\\1\\1
+								\end{bmatrix}, \begin{bmatrix}
+								1\\0\\1
+								\end{bmatrix}, \begin{bmatrix}
+								1\\1\\0
+								\end{bmatrix}\right\}$ linearly independent?
+							<p>
+							We want to know all solutions to the equation
+							\begin{equation}
+								c_1\begin{bmatrix}
+								0\\1\\1
+								\end{bmatrix}+c_2\begin{bmatrix}
+								1\\0\\1
+								\end{bmatrix}+c_3\begin{bmatrix}
+								1\\1\\0
+								\end{bmatrix}=\begin{bmatrix}
+								0\\0\\0
+								\end{bmatrix}.
+							\end{equation}
+							</p>
+							<p>
+							We can determine the solutions by solving the corresponding augmented homogeneous system. After row reducing, we obtain:
+									$$\left[\begin{array}{ccc|c}
+									0&1&1&0\\
+									1&0&1&0\\
+									1&1&0&0
+									\end{array}\right]\quad \sim\quad\left[\begin{array}{ccc|c}
+									1&0&0&0\\
+									0&1&0&0\\
+									0&0&1&0
+									\end{array}\right].$$
+							</p>
+							<p>
+							So we have a unique solution $c_1=c_2=c_3=0$, and so $S=\left\{\begin{bmatrix}
+								0\\1\\1
+								\end{bmatrix}, \begin{bmatrix}
+								1\\0\\1
+								\end{bmatrix}, \begin{bmatrix}
+								1\\1\\0
+								\end{bmatrix}\right\}$ is linearly independent.
+							</p>
+						</div>
+						<div class="example">
+							Is $S'=\left\{\begin{bmatrix}
+								-5\\2\\1
+								\end{bmatrix}, \begin{bmatrix}
+								7\\-4\\2
+								\end{bmatrix}, \begin{bmatrix}
+								-1\\-2\\7
+								\end{bmatrix}\right\}$ linearly independent?
+							<p>
+							To find the solutions to 
+							\begin{equation}
+								c_1\begin{bmatrix}
+								-5\\2\\1
+								\end{bmatrix}+c_2\begin{bmatrix}
+								7\\-4\\2
+								\end{bmatrix}+c_3\begin{bmatrix}
+								-1\\-2\\7
+								\end{bmatrix}=\begin{bmatrix}
+								0\\0\\0
+								\end{bmatrix}
+							\end{equation}
+							we solve the corresponding homogeneous system:
+							$$\left[\begin{array}{ccc|c}
+							-5&7&-1&0\\
+							2&-4&-2&0\\
+							1&2&7&0
+							\end{array}\right] \quad \sim \quad \left[\begin{array}{ccc|c}
+							1&0&3&0\\
+							0&1&2&0\\
+							0&0&0&0
+							\end{array}\right].$$
+							</p>
+							<p>
+							So our solution set is given by
+							$$\left\{\begin{bmatrix}
+								c_1\\c_2\\c_3
+								\end{bmatrix}=\begin{bmatrix}
+								-3c_3\\-2c_3\\c_3
+								\end{bmatrix}\ \Bigg|\ c_3\in\mathbb{R}\right\},$$
+							and so the system has infinitely many solutions, and hence, $S'$ is linearly dependent.
+							</p>
+							<p>
+							Note further that the reduced row-echelon form of the system actually tells us precisely how the vector $\begin{bmatrix}
+							-1\\-2\\7
+							\end{bmatrix}$ can be written as a linear combination of $\begin{bmatrix}
+							-5\\2\\1
+							\end{bmatrix}$ and $\begin{bmatrix}
+							7\\-4\\2
+							\end{bmatrix}$. The entry in each row of the column without a leading one in the RREF corresponds to the coefficient of the column with a leading one in that same row in the linear combination. So we have
+							$$\begin{bmatrix}
+							-1\\-2\\5
+							\end{bmatrix}=3\begin{bmatrix}
+							-5\\2\\1
+							\end{bmatrix}+2\begin{bmatrix}
+							7\\-4\\2
+							\end{bmatrix}.$$
+							</p>
+						</div>
+					<section class="main-subsubsection">
+						<h4>Linear independence/dependence of a set containing $2$ vectors</h4>
+						<div class="example">
+							Consider the sets $I=\left\{\begin{bmatrix}
+								1\\1
+								\end{bmatrix},\begin{bmatrix}
+								2\\-3
+								\end{bmatrix}\right\}$ and $D=\left\{\begin{bmatrix}
+								1\\-2
+								\end{bmatrix}, \begin{bmatrix}
+								-2\\4
+								\end{bmatrix}\right\}$. 
+							<p>
+								Note that $I$ is a linearly independent set while $D$ is a linearly dependent set. We see that in the particular case in which we have only two vectors in a set, determining this is much simpler than solving an augmented homogeneous system. We see that the vectors in $D$ are multiples of one another:
+								$$\begin{bmatrix}
+								-2\\4
+								\end{bmatrix}=-2\begin{bmatrix}
+								1\\-2
+								\end{bmatrix},$$
+								and hence, $D$ is clearly linearly dependent.
+							</p>
+							<p>
+								On the other hand, the vectors in $I$ are not multiples of one another, and hence, $I$ is linearly independent.
+							</p>
+							<p>
+								The difference in linear independence/dependence of a set of two vectors also has a simple geometric interpretation:
+							</p>
+							<br>
+							<img class="figure" style="max-width: 300px" src="./images/2_4_5D2vecslinindep.jpg" alt="two linearly independent vectors on the plane">
+							<br>
+							<p>
+								On the coordinate plane above, we see that linear independence of $\begin{bmatrix}
+								1\\1
+								\end{bmatrix}$ and $\begin{bmatrix}
+								2\\-3
+								\end{bmatrix}$ can be interpreted as these two vectors lying on two different (independent) lines through the origin.
+							</p>
+							<br>
+							<img class="figure" style="max-width: 300px" src="./images/2_4_5D2vecslindep.jpg" alt="two linearly dependent vectors on the plane">
+							<br>
+							<p>
+								On the coordinate plane above, we see that linear dependence of $\begin{bmatrix}
+								1\\-2
+								\end{bmatrix}$ and $\begin{bmatrix}
+								-2\\4
+								\end{bmatrix}$ can be interpreted as these two vectors lying on the same (dependent) line through the origin.
+							</p>
+						</div>
 					</section>
+				</section>
+
+				<section class="main-subsection">
+					<h3>Main Theorems of Linear Algebra</h3>
+					<p>
+						The concepts of span and linear independence are two very core ideas in linear algebra.
+					</p>
+					<p>
+						We see that linearly independence corresponds to the idea of systems having a unique solution, 
+						while span corresponds to the idea of systems always being consistent. The following theorems formalize these two ideas:
+					</p>
+					<div class="theorem_container">
+						<div class="theorem">
+							<div class="theorem_header">
+								<p><em>Main theorems of linear independence</em></p>
+							</div>
+							<div class="theorem_text">
+								<p>
+									Suppose $A$ is an matrix with $m$ rows and $n$ columns, and let $\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}\in\mathbb{R}^m$ be the columns of $A$.
+								</p>
+								<p>
+									The following are equivalent:
+								</p>
+								<p>
+									<ul>
+										<li>$\set{\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}}$ is linearly independent.</li>
+										<li>Any $\vec{b}\in\mathrm{span}\set{\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}}$ can be written <em>uniquely</em> as a 
+											linear combination of $\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}$.</li>
+										<li>The augmented homogeneous system $[A|\vec{0}]$ has only the trivial solution $\vec{x}=\vec{0}$.</li>
+										<li>The augmented inhomogeneous system $[A|\vec{b}]$ has a unique solution, for any $\vec{b}\in \mathbb{R}^m$ in which the system is consistent.</li>
+										<li>$\mathrm{RREF}(A)$ has a leading $1$ in every column.</li>
+										<li>Any row-echelon form of $A$ has a leading entry in every column.</li>
+									</ul>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="theorem_container">
+						<div class="theorem">
+							<div class="theorem_header">
+								<p><em>Main theorems of span</em></p>
+							</div>
+							<div class="theorem_text">
+								<p>
+									Suppose $A$ is an matrix with $m$ rows and $n$ columns, and let $\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}\in\mathbb{R}^m$ be the columns of $A$.
+								</p>
+								<p>
+									The following are equivalent:
+								</p>
+								<p>
+									<ul>
+										<li>$\mathrm{span}\set{
+											\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}}=\mathbb{R}^m$.</li>
+										<li>Any $\vec{b}\in\mathbb{R}^m$ can be written as a linear combination of $\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}$.</li>
+										<li>The augmented inhomogeneous system $[A|\vec{b}]$ is always consistent, for any $\vec{b}\in\mathbb{R}^m$.</li>
+										<li>$\mathrm{RREF}(A)$ has a leading $1$ in every row.</li>
+										<li>Any row-echelon form of $A$ has a leading entry in every row.</li>
+									</ul>
+								</p>
+							</div>
+						</div>
+					</div>
+					<p>
+						Ideally, we would like to work with systems that are <em>both</em> always consistent and containing a unique solution. 
+					</p>
+					<p>
+						If we look at the particular case in which $A$ as above is square ($n=m$), then all of the above statements in <b>Theorem 2.5.1</b> and 
+					<b>Theorem 2.5.2</b> are equivalent. In this special case, we call the columns $\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}$ of $A$ a 
+					<em>basis</em> for $\mathbb{R}^n$.
+					</p>
+				</section>
+				<section class="main-subsection">
+					<h3>Bases and Dimension</h3>
+					<p>
+						Before we begin this section, some quick terminology:
+					</p>
+					<p>
+						Recall that a <em>subspace</em> $W$ of $\mathbb{R}^n$ can be thought of as the span of a set of vectors contained 
+						in $\mathbb{R}^n$. We call $W$ a subspace because we can think of it as a vector space itself that is contained in the (potentially) larger space $\mathbb{R}^n$.
+					</p>
+					<p>
+						We define a <em>subset</em> $S$ of $\mathbb{R}^n$ to be a set of vectors that are contained in $\mathbb{R}^n$, denoted $S\subset \mathbb{R}^n$. 
+						A subset is not necessarily a subspace, as a subset may not have any algebraic structure&mdash;it could be just a random collection of a few vectors.
+					</p>
+					<div class="example">
+						$\mathrm{span}\left\{\begin{bmatrix}
+						1\\2
+						\end{bmatrix}\right\}$ is a <em>subspace</em> of $\mathbb{R}^2$, while $\left\{\begin{bmatrix}
+						1\\2
+						\end{bmatrix}, \begin{bmatrix}
+						-2\\-4
+						\end{bmatrix}\right\}$ is a <em>subset</em> of $\mathbb{R}^2$ (and in fact, a subset of $\mathrm{span}\left\{\begin{bmatrix}
+						1\\2
+						\end{bmatrix}\right\}$ as well).
+					</div>
+					<div class="definition_container">
+						<div class="definition">
+							<div class="definition_header">
+								<p><em>Basis for a subspace of $\mathbb{R}^n$</em></p>
+							</div>
+							<div class="definition_text">
+								<p>
+									Let $W$ be any subspace of $\mathbb{R}^n$ (or possibly $\mathbb{R}^n$ itself) and suppose that $B=\set{\vec{v_1}, \vec{v_2},\dots ,\vec{v_k}}$ 
+									is a subset of $W$. We say that $B$ is a <em style="color: blue">basis</em> for $W$ if
+								</p>
+								<ul>
+									<li>$B$ is linearly independent, and</li>
+									<li>$\mathrm{span}\set{\vec{v_1}, \vec{v_2},\dots ,\vec{v_k}}=W$.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<p>
+						In the particular case that $W=\mathbb{R}^n$, we have that $B=\set{\vec{v_1}, \vec{v_2},\dots ,\vec{v_n}}$ is a basis for $\mathbb{R}^n$ if $B$ is linearly independent and $\mathrm{span}(B)=\mathbb{R}^n$.
+					</p>
+					<div class="example">
+						The standard basis of $\mathbb{R}^n$: $S=\left\{\begin{bmatrix}
+						1\\0\\ \vdots\\ 0
+						\end{bmatrix},\begin{bmatrix}
+						0\\1\\ \vdots\\ 0
+						\end{bmatrix}, \dots, \begin{bmatrix}
+						0\\0\\ \vdots\\ 1
+						\end{bmatrix}\right\}$.
+					</div>
+					<div class="example">
+						The following sets are bases for $\mathbb{R}^2$:
+						$$\left\{\begin{bmatrix}
+							1\\2
+							\end{bmatrix}, \begin{bmatrix}
+							3\\4
+							\end{bmatrix}\right\}, \quad \left\{\begin{bmatrix}
+							1\\1
+							\end{bmatrix}, \begin{bmatrix}
+							-1\\1
+							\end{bmatrix}\right\}, \quad \left\{\begin{bmatrix}
+							5\\-2
+							\end{bmatrix}, \begin{bmatrix}
+							8\\9
+							\end{bmatrix}\right\}$$
+					</div>
+					<div class="example">
+						The following sets are bases for $\mathbb{R}^3$:
+						<div class="row">
+							<div class="col-lg-4 col-sm-12">
+								$$\left\{\begin{bmatrix}
+								1\\1\\0
+								\end{bmatrix}, \begin{bmatrix}
+								1\\0\\1
+								\end{bmatrix}, \begin{bmatrix}
+								0\\1\\1
+								\end{bmatrix}\right\},$$
+							</div>
+							<div class="col-lg-4 col-sm-12">
+								$$\left\{\begin{bmatrix}
+								2\\-1\\5
+								\end{bmatrix}, \begin{bmatrix}
+								1\\7\\8
+								\end{bmatrix}, \begin{bmatrix}
+								3\\9\\25
+								\end{bmatrix}\right\},$$
+							</div>
+							<div class="col-lg-4 col-sm-12">
+								$$\left\{\begin{bmatrix}
+								-5\\1\\5
+								\end{bmatrix}, \begin{bmatrix}
+								3\\6\\9
+								\end{bmatrix}, \begin{bmatrix}
+								69\\420\\666
+								\end{bmatrix}\right\}.$$
+							</div>
+						</div>
+					</div>
+					<p>
+						Bases are important in linear algebra because they allow us to represent an entire vector space in terms of finitely many vectors&mdash;
+						since a basis spans the entire space, we can write any vector in the space as a linear combination of a basis, and since a basis is linearly 
+						independent, we know that a basis doesn't have any redundant unnecessary vectors.
+					</p>
+					<p>
+						One thing you may notice about bases for $\mathbb{R}^n$: it seems that the number of vectors in any basis is $n$. Is this going to be true in general? 
+						This question motivates the following definition:
+					</p>
+					<div class="definition_container">
+						<div class="definition">
+							<div class="definition_header">
+								<p><em>dimension</em></p>
+							</div>
+							<div class="definition_text">
+								<p>
+									If $W$ is any subspace of $\mathbb{R}^n$, we define the <em style="color: blue">dimension</em> of $W$, denoted $\dim(W)$, as the number of vectors in 
+									<em>any</em> basis for $W$.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="example">
+						<div class="row">
+							<div class="col-sm-12 col-lg-3">$$\dim(\mathbb{R})=1,$$</div>
+							<div class="col-sm-12 col-lg-3">$$\dim(\mathbb{R}^2)=2,$$</div>
+							<div class="col-sm-12 col-lg-3">$$\dim(\mathbb{R}^3)=3,$$</div>
+							<div class="col-sm-12 col-lg-3">$$\dots \qquad \dim(\mathbb{R}^n)=n$$</div>
+						</div>
+					</div>
+					<p>
+						It may seem silly that we define dimension in this way&mdash;why don't we just define the dimension of $\mathbb{R}^n$ to be $n$? 
+						As we see, in the case of specific subspaces of $\mathbb{R}^n$, it is sometimes important to understand how to quantify its dimension. 
+						Later in the course, we will also work with vector spaces that don't look like $\mathbb{R}^n$, and the dimension of these spaces will not 
+						always be clear immediately. In those future cases, we will find that determining dimension requires us to construct a basis for the space.
+					</p>
+					<p>
+						Now, we want to ensure that dimension is well-defined, and the definition of dimension may have you asking: is it not possible to obtain a basis 
+						for $\mathbb{R}^n$ containing say $k$ vectors, where $k\neq n$?  The following theorem will tell us that indeed any basis of $\mathbb{R}^n$ must have the 
+						same number of vectors, and hence, dimension is well defined:
+					</p>
+					<div class="theorem_container">
+						<div class="theorem">
+							<div class="theorem_header">
+								<p><em></em></p>
+							</div>
+							<div class="theorem_text">
+								<p>
+									Let $W$ be an $m$-dimensional subspace of $\mathbb{R}^n$ and suppose that $C=\set{\vec{v_1}, \dots, \vec{v_k}}$ be a subset of $W$. 
+									<ol>
+										<li>If $k&gt;m$, then $C$ is linearly dependent.</li>
+										<li>If $k&lt;m$, then $C$ does not span $W$</li>
+									</ol>
+								</p>
+							</div>
+						</div>
+					</div>
+					<p>
+						The above theorem tells us that the only way that we could possibly have $C$ be both linearly independent and also span all of $W$, we must have $k=m$. 
+						In other words, the only way that $C$ could possibly be a basis for an $m$-dimensional subspace $W$, is if $C$ contains $m$ vectors (but conversely, 
+						if a set of vectors in $W$ contains $m$ vectors, it is <em>not</em> necessarily a basis for $W$).
+					</p>
+					<p>
+						This theorem shows that in the particular case of $\mathbb{R}^n$, that any set containing more than $n$ vectors in $\mathbb{R}^n$ cannot be linearly independent, and 
+						any set containing less than $n$ vectors in $\mathbb{R}^n$ cannot span $\mathbb{R}^n$.
+					</p>
+					<div class="example">
+						We can immediately conclude that the set $D=\left\{\begin{bmatrix}1\\1\\1\end{bmatrix}, \begin{bmatrix}6\\2\\12\end{bmatrix}, \begin{bmatrix}5\\3\\-1\end{bmatrix}, \begin{bmatrix}-5\\6\\2\end{bmatrix}\right\}$
+						is a linearly <em>dependent</em> set in $\mathbb{R}^3$, since $\dim(\mathbb{R}^3)=3$, while $D$ contains $4$ vectors. Hence, $D$ is not a basis for $\mathbb{R}^3$ as well.
+					</div>
+					<div class="example">
+						On the other hand, we can immediately conclude that $E=\left\{\begin{bmatrix}0\\1\\-7\end{bmatrix}, \begin{bmatrix}2\\-9\\3\end{bmatrix}\right\}$ is <em>not</em> a spanning set for $\mathbb{R}^3$, since $\dim(\mathbb{R}^3)=3$, while $E$ 
+						contains only $2$ vectors. Hence, $E$ is not a basis for $\mathbb{R}^3$ as well.
+					</div>
+					<p>
+						Now, <b>Theorem 2.6.1</b> may have you asking: well if I have a linearly independent set of $m$ vectors in an $m$-dimensional subspace $W$ of $\mathbb{R}^n$, will this also be a spanning set? What about the converse?
+					</p>
+					<p>
+						To wrap up this discussion, we have the following theorem which gives equivalent definitions of a basis for any subspace of $\mathbb{R}^n$:
+					</p>
+					<div class="theorem_container">
+						<div class="theorem">
+							<div class="theorem_header">
+								<p><em></em></p>
+							</div>
+							<div class="theorem_text">
+								<p>
+									Suppose $W$ is an $m$-dimensional subspace of $\mathbb{R}^m$ and that $B=\set{\vec{v_1}, \vec{v_2}, \dots, \vec{v_m}}$ is a subset of $W$ containing $m$ vectors. The following are equivalent:
+									<ol>
+										<li>$B$ is a basis for $W$.</li>
+										<li>$B$ is linearly independent.</li>
+										<li>$B$ is a spanning set for $W$.</li>
+									</ol>
+								</p>
+							</div>
+						</div>
+					</div>
+					<p>
+						This theorem tells us that if we have a set of $m$ vectors in $W$, all we need to do to determine if it is a basis for $W$ is either determine that it is linearly independent <em>or</em> determine that it is a 
+						spanning set for $W$. Both of these properties immediately imply the other when we have the correct number of vectors in a set. So knowing that the dimension of $W$ is $m$ allows us to know precisely how many 
+						vectors we would need to possibly have a basis.
+					</p>
+				</section>
 				</article>
 			</section>
-    <div class="row">
-      <div class="col-sm-12 col-md-6">
-        
-      </div>
-      <div class="col-sm-12 col-md-6">
-        <a href="linearalgebra2.html">Chapter 2 ></a>
-      </div>
-    </div>
+			
       <!-- Footer section -->
     <section id="footer-section" class="text-center">
       <p>&copy; Stephen Pablo 2022</p>
